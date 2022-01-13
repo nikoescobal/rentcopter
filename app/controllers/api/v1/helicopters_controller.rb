@@ -1,5 +1,5 @@
 class Api::V1::HelicoptersController < ApplicationController
-  before_action :set_helicopter, only: [:show, :update, :destroy]
+  before_action :set_helicopter, only: %i[show update destroy]
 
   # GET /helicopters
   def index
@@ -39,13 +39,14 @@ class Api::V1::HelicoptersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_helicopter
-      @helicopter = Helicopter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def helicopter_params
-      params.fetch(:helicopter, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_helicopter
+    @helicopter = Helicopter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def helicopter_params
+    params.fetch(:helicopter, {})
+  end
 end
