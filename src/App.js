@@ -1,29 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Helicopters from './pages/Helicopters';
+import Reservations from './pages/Reservations';
+import Reserve from './pages/Reserve';
+import AddHelicopter from './pages/AddHelicopter';
+import RemoveHelicopter from './pages/RemoveHelicopter';
+import ErrorPage from './pages/ErrorPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Helicopters />} />
+      <Route path="/reservations" element={<Reservations />} />
+      <Route path="/reservations/new" element={<Reserve />} />
+      <Route path="/helicopters/new" element={<AddHelicopter />} />
+      <Route path="/helicopters/remove" element={<RemoveHelicopter />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
