@@ -1,0 +1,2 @@
+class Helicopter < ApplicationRecord
+end
