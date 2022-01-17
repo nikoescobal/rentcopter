@@ -9,22 +9,21 @@ import Navbar from './components/Navbar';
 
 const App = () => (
   <>
- 
-  <Router>
-  <Navbar></Navbar>
-    <Routes>
-      <Route path="/" element={<Helicopters />} />
-      <Route path="/reservations" element={<Reservations />} />
-      <Route path="/add-reservation" element={<Reserve />} />
-      <Route path="/add-helicopter" element={<AddHelicopter />} />
-      <Route path="/remove-helicopter" element={<RemoveHelicopter />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
-    
-  </Router>
+
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Helicopters />} />
+        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/add-reservation" element={<Reserve />} />
+        <Route path="/add-helicopter" element={<AddHelicopter />} />
+        <Route path="/remove-helicopter" element={<RemoveHelicopter />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+
+    </Router>
   </>
-  
-  
+
 );
 
 export default App;

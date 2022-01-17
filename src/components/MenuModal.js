@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const MenuModal = () => {
-    return (
-        <div className='absolute h-screen w-screen opacity-75 bg-slate-800'>
-                        
-        </div>
-    )
-}
+const MenuModal = () => (
+  <div className="absolute h-screen w-screen opacity-75 bg-slate-800" />
+);
 
-export default MenuModal
+export default MenuModal;
