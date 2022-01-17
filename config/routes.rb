@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   namespace :api do
     namespace :v1 do
       resources :helicopters, only: [:index, :create, :destroy, :show]
+      resources :sessions, only: [:create, :destroy]
       resources :users, only: [:create] do
         resources :reservations, only: [:index, :create, :destroy]
       end
