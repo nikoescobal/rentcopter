@@ -1,3 +1,16 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background: -webkit-linear-gradient(45deg, rgb(34, 33, 33), rgb(35, 35, 58) 70%);
+  color: white;
+}
+
+.cool-title {
+  font-size: 25px;
+  background: -webkit-linear-gradient(90deg, gray, white 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+}
