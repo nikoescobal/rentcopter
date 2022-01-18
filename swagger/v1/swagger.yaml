@@ -1,0 +1,102 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/helicopters":
+    get:
+      summary: list helicopters
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create helicopter
+      responses:
+        '200':
+          description: successful
+  "/api/v1/helicopters/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show helicopter
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete helicopter
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete reservation
+      responses:
+        '200':
+          description: successful
+  "/api/v1/sessions":
+    post:
+      summary: create session
+      responses:
+        '200':
+          description: successful
+  "/api/v1/sessions/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete session
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    post:
+      summary: create user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
