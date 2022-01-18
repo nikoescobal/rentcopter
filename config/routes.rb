@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :helicopters, only: [:index, :create, :destroy, :show]
+<<<<<<< HEAD
+      resources :users, only: [:index, :create] do
+=======
       resources :sessions, only: [:create, :destroy]
       resources :users, only: [:create] do
+>>>>>>> dev-back-end
         resources :reservations, only: [:index, :create, :destroy]
       end
     end
