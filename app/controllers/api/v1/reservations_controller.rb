@@ -3,7 +3,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.find_by(user_id: params[:id])
 
     render json: @reservations
   end
