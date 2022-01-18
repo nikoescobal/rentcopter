@@ -15,7 +15,9 @@ class Api::V1::ReservationsController < ApplicationController
 
   # POST /reservations
   def create
-    @reservation = Reservation.new(reservation_params)
+    @user = User.find(params[id])
+    @reservation = @user.reservations.new(reservation_params)
+    @reservation.helicopter_id = params[:helicopter_id]
 
     if @reservation.save
       render json: @reservation, status: :created, location: @reservation
@@ -47,6 +49,6 @@ class Api::V1::ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.fetch(:reservation, {})
+    params.permit(:date_start, :date_end)
   end
 end

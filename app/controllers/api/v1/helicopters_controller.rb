@@ -10,12 +10,14 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # GET /helicopters/1
   def show
+    @helicopter = Helicopter.find(params[:id])
     render json: @helicopter
   end
 
   # POST /helicopters
   def create
-    @helicopter = Helicopter.new(helicopter_params)
+    @user = User.find(params[id])
+    @helicopter = @user.helicopters.new(helicopter_params)
 
     if @helicopter.save
       render json: @helicopter, status: :created, location: @helicopter
@@ -47,6 +49,6 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def helicopter_params
-    params.fetch(:helicopter, {})
+    params.permit(:name, :model, :image, :description, :rental_cost)
   end
 end
