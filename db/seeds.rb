@@ -4,8 +4,24 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-User.create!(name:"Kalunge")
-User.first.helicopters.create!([{name:"Heliii", model:"Z", image:"image", description:"Coolest model in town"}, {name:"copteeer", model:"Z-x", image:"image", description:"Coolest model in town"}])
-User.first.reservations.create!()
+user1 = User.create!(name:"Kalunge", admin: true)
+user2 = User.create!(name:"Niko", admin: true)
+user3 = User.create!(name:"Reshy", admin: true)
+user4 = User.create!(name:"Ruben", admin: true)
+
+copter1 = Helicopter.create!(name: "Copter-X", model:"Z", image:"copter-x.png", description: "Ultra Luxury Heli. Comes with jacuzzi.", user_id:1)
+copter2 = Helicopter.create!(name: "Apache-Y", model:"Z", image:"apache-y.png", description: "Military Escort Heli. Comes with three soldiers.", user_id:1)
+copter3 = Helicopter.create!(name: "Deli-Heli", model:"Z", image:"deli-heli.png", description: "Get your deli meats with Deli-heli. Comes with charcuterie and gelato.", user_id:1)
+copter4 = Helicopter.create!(name: "Airstriker", model:"Z", image:"airstriker.png", description: "Airstrikes on demand. Deploy a desired hitman of choice to finish off targets.", user_id:1)
+
+reservation1 = Reservation.create!(date_start:Time.now, date_end:Time.now, user_id:1, helicopter_id:1)
+reservation2 = Reservation.create!(date_start:Time.now, date_end:Time.now, user_id:2, helicopter_id:2)
+reservation3 = Reservation.create!(date_start:Time.now, date_end:Time.now, user_id:3, helicopter_id:3)
+reservation4 = Reservation.create!(date_start:Time.now, date_end:Time.now, user_id:4, helicopter_id:4)
+
+
+
+# User.first.helicopters.create!([{name:"Heliii", admin:true, model:"Z", image:"image", description:"Coolest model in town"}, {name:"copteeer", model:"Z-x", image:"image", description:"Coolest model in town"}])
+# User.first.reservations.create!(date_start:Time.now, date_end:Time.now)
 
 #   Character.create(name: 'Luke', movie: movies.first)

@@ -37,6 +37,7 @@ group :development do
   gem 'active_model_serializers', '~> 0.10.12'
   gem 'rubocop', '>= 1.0', '< 2.0'
   gem 'spring'
+  gem 'react-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
