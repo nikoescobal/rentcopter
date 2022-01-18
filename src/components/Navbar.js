@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 import Drawer from './Drawer';
 
 const Navbar = () => (
@@ -7,11 +10,13 @@ const Navbar = () => (
     <Drawer />
     <div className="w-72 h-screen bg-slate-800 justify-start text-center text-lg text-white pt-5 left-0 hidden md:block">
 
-      <ul className="flex flex-col justify-center h-full">
-        <li className="mt-2"><NavLink to="/reservations">Reservations</NavLink></li>
-        <li className="mt-2"><NavLink to="/reservations/new">Reserve</NavLink></li>
-        <li className="mt-2"><NavLink to="/helicopters/new">AddHelicopter</NavLink></li>
-      </ul>
+      <List className="h-full flex flex-col justify-center">
+        {['Reservations', 'Add reservation', 'Add Helicopter', 'Remove Helicopter'].map((text) => (
+          <ListItem button key={text}>
+            <NavLink className="text-center w-full " to={`/${text.toLowerCase().replace(' ', '-')}/`}><ListItemText primary={text} /></NavLink>
+          </ListItem>
+        ))}
+      </List>
     </div>
   </>
 
