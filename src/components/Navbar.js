@@ -8,7 +8,7 @@ import Drawer from './Drawer';
 const Navbar = () => (
   <>
     <Drawer />
-    <div className="w-72 h-screen bg-slate-800 justify-start text-center text-lg text-white pt-5 left-0 hidden md:block">
+    <div className="w-1/6 h-screen bg-slate-800 justify-start text-center text-lg text-white pt-5 left-0 hidden md:block">
 
       <List className="h-full flex flex-col justify-center">
         {['Reservations', 'Add reservation', 'Add Helicopter', 'Remove Helicopter'].map((text) => (
