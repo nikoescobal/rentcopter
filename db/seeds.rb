@@ -9,10 +9,10 @@ user2 = User.create!(name:"Niko", email:"niko.escobal@gmail.com", password:"1234
 user3 = User.create!(name:"Reshy", email:"reshyresh@gmail.com", password:"123456", admin: true)
 user4 = User.create!(name:"Ruben", email:"rpire@gmail.com", password:"123456", admin: true)
 
-copter1 = Helicopter.create!(name: "Copter-X", model:"Z", image:"copter-x.png", description: "Ultra Luxury Heli. Comes with jacuzzi.", rental_cost:50000, user_id:1)
-copter2 = Helicopter.create!(name: "Apache-Y", model:"Z", image:"apache-y.png", description: "Military Escort Heli. Comes with three soldiers.",rental_cost:40000, user_id:2)
-copter3 = Helicopter.create!(name: "Deli-Heli", model:"Z", image:"deli-heli.png", description: "Get your deli meats with Deli-heli. Comes with charcuterie and gelato.",rental_cost:40000, user_id:3)
-copter4 = Helicopter.create!(name: "Airstriker", model:"Z", image:"airstriker.png", description: "Airstrikes on demand. Deploy a desired hitman of choice to finish off targets.",rental_cost:100000, user_id:4)
+copter1 = Helicopter.create!(name: "Copter-X", model:"Z", image:"copter-x.png", description: "Ultra Luxury Heli. Comes with jacuzzi.", rental_cost:50000, capacity:6, flying_range:350, flying_speed:260, user_id:1)
+copter2 = Helicopter.create!(name: "Apache-Y", model:"Z", image:"apache-y.png", description: "Military Escort Heli. Comes with three soldiers.",rental_cost:40000,  capacity:8, flying_range:450, flying_speed:460, user_id:2)
+copter3 = Helicopter.create!(name: "Deli-Heli", model:"Z", image:"deli-heli.png", description: "Get your deli meats with Deli-heli. Comes with charcuterie and gelato.",rental_cost:40000,  capacity:10, flying_range:360, flying_speed:250, user_id:3)
+copter4 = Helicopter.create!(name: "Airstriker", model:"Z", image:"airstriker.png", description: "Airstrikes on demand. Comes with a desired hitman of choice to finish off remaining targets.",rental_cost:100000, capacity:12, flying_range:750, flying_speed:560,  user_id:4)
 
 reservation1 = Reservation.create!(date_start:Time.now, date_end:Time.now, user_id:1, helicopter_id:1)
 reservation2 = Reservation.create!(date_start:Time.now, date_end:Time.now, user_id:2, helicopter_id:2)
