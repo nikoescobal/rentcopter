@@ -49,6 +49,7 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def helicopter_params
-    params.permit(:name, :model, :image, :description, :rental_cost)
+    params.require(:helicopter).permit(:name, :model, :image, :description, :rental_cost, :capacity, :flying_range,
+                                       :flying_speed)
   end
 end

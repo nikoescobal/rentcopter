@@ -239,6 +239,10 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+<<<<<<< HEAD
+=======
+  x86_64-linux
+>>>>>>> 7ed12f7ecd4686e0549d0f2834b99816a59454c1
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.12)
