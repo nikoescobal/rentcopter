@@ -3,8 +3,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.find_by(user_id: params[:id])
-
+    @reservations = User.find_by(id: params[:user_id]).reservations
     render json: @reservations
   end
 
@@ -15,7 +14,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # POST /reservations
   def create
-    @user = User.find(params[id])
+    @user = User.find_by(id: params[:user_id])
     @reservation = @user.reservations.new(reservation_params)
     @reservation.helicopter_id = params[:helicopter_id]
 
