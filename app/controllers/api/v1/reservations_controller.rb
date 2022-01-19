@@ -19,7 +19,7 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation.helicopter_id = params[:helicopter_id]
 
     if @reservation.save
-      render json: @reservation, status: :created, location: @reservation
+      render json: @reservation, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
@@ -48,6 +48,6 @@ class Api::V1::ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.permit(:date_start, :date_end)
+    params.require(:reservation).permit(:date_start, :date_end)
   end
 end

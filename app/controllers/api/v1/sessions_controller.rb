@@ -8,12 +8,4 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
-  def destroy
-    current_user&.authentication_token = nil
-    if current_user&.save
-      head(:ok)
-    else
-      render json: { error: 'Something Went Wrong' }, status: :unauthorized
-    end
-  end
 end
