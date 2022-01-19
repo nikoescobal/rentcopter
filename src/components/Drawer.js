@@ -6,6 +6,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+import LogoutButton from './LogoutButton';
+import Logo from './Logo';
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -28,6 +30,7 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
       className="bg-slate-800 h-full text-white flex flex-col justify-center text-center md:hidden"
     >
+      <Logo />
       <List>
         {['Reservations', 'Add reservation', 'Add Helicopter', 'Remove Helicopter'].map((text) => (
           <ListItem button key={text}>
@@ -35,11 +38,12 @@ export default function TemporaryDrawer() {
           </ListItem>
         ))}
       </List>
+      <LogoutButton />
     </Box>
   );
 
   return (
-    <div className="sm:block md:hidden text-yellow-400 text-5xl absolute top-4 left-4">
+    <div className="sm:block md:hidden text-yellow-400 text-5xl absolute top-4 left-4 z-50">
       <>
         <FaBars onClick={toggleDrawer('left', true)} />
         <Drawer

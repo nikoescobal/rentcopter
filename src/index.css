@@ -7,10 +7,18 @@ body {
   color: white;
 }
 
+#navbar {
+  background: -webkit-linear-gradient(90deg, rgb(48, 48, 48), rgb(28, 28, 46) 70%);
+}
+
 .cool-title {
   font-size: 25px;
   background: -webkit-linear-gradient(90deg, gray, white 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Montserrat', sans-serif;
+}
+
+.menu-items {
+  font-family: 'Kanit', sans-serif;
 }
