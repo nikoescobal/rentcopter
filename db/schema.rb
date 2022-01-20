@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 2022_01_19_154448) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.integer "rental_cost"
+    t.integer "capacity"
+    t.integer "flying_range"
+    t.integer "flying_speed"
     t.index ["user_id"], name: "index_helicopters_on_user_id"
   end
 
