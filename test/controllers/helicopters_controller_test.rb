@@ -19,18 +19,18 @@ class HelicoptersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show helicopter' do
-    get helicopter_url(@helicopter), as: :json
+    get api_v1_helicopter_url(@helicopter), as: :json
     assert_response :success
   end
 
   test 'should update helicopter' do
-    patch helicopter_url(@helicopter), params: { helicopter: {} }, as: :json
+    patch api_v1_helicopter_url(@helicopter), params: { helicopter: {} }, as: :json
     assert_response 200
   end
 
   test 'should destroy helicopter' do
     assert_difference('Helicopter.count', -1) do
-      delete helicopter_url(@helicopter), as: :json
+      delete api_v1_helicopter_url(@helicopter), as: :json
     end
 
     assert_response 204

@@ -127,6 +127,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.1.4.4)
@@ -239,10 +241,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-<<<<<<< HEAD
-=======
   x86_64-linux
->>>>>>> 7ed12f7ecd4686e0549d0f2834b99816a59454c1
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.12)
@@ -254,6 +253,7 @@ DEPENDENCIES
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   rails (~> 6.1.4, >= 6.1.4.4)
   react-rails
   rspec-rails

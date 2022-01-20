@@ -4,10 +4,11 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-user1 = User.create!(name:"Kalunge", email:"kalunge@gmail.com", password:"123456", admin: true)
-user2 = User.create!(name:"Niko", email:"niko.escobal@gmail.com", password:"123456", admin: true)
-user3 = User.create!(name:"Reshy", email:"reshyresh@gmail.com", password:"123456", admin: true)
-user4 = User.create!(name:"Ruben", email:"rpire@gmail.com", password:"123456", admin: true)
+user = User.create!(name: 'Tester', username:"Tester", email:"user@gmail.com", password:"123456", admin: true)
+user1 = User.create!(name:"Kalunge", username:"Titus", email:"kalunge@gmail.com", password:"123456", admin: true)
+user2 = User.create!(name:"Niko", username:"Niko", email:"niko.escobal@gmail.com", password:"123456", admin: true)
+user3 = User.create!(name:"Reshy", username:"Reshy", email:"reshyresh@gmail.com", password:"123456", admin: true)
+user4 = User.create!(name:"Ruben", username:"Ruben", email:"rpire@gmail.com", password:"123456", admin: true)
 
 copter1 = Helicopter.create!(name: "Copter-X", model:"Z", image:"copter-x.png", description: "Ultra Luxury Heli. Comes with jacuzzi.", rental_cost:50000, capacity:6, flying_range:350, flying_speed:260, user_id:1)
 copter2 = Helicopter.create!(name: "Apache-Y", model:"Z", image:"apache-y.png", description: "Military Escort Heli. Comes with three soldiers.",rental_cost:40000,  capacity:8, flying_range:450, flying_speed:460, user_id:2)

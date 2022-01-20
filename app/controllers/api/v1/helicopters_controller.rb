@@ -16,11 +16,11 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # POST /helicopters
   def create
-    @user = User.find(params[id])
+    @user = User.find(params[:id])
     @helicopter = @user.helicopters.new(helicopter_params)
 
     if @helicopter.save
-      render json: @helicopter, status: :created, location: @helicopter
+      render json: @helicopter, status: :created, location: api_v1_helicopter_url(@helicopter)
     else
       render json: @helicopter.errors, status: :unprocessable_entity
     end
