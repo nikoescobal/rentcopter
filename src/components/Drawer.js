@@ -2,12 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
 import Logo from './Logo';
+import NavImages from './NavImages';
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -30,15 +29,24 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
       className="bg-slate-800 h-full text-white flex flex-col justify-center text-center md:hidden"
     >
-      <Logo />
-      <List>
+      <List className="h-full flex flex-col justify-center">
         {['Reservations', 'Add reservation', 'Add Helicopter', 'Remove Helicopter'].map((text) => (
-          <ListItem button key={text}>
-            <NavLink className="text-center w-full " to={`/${text.toLowerCase().replace(' ', '-')}/`}><ListItemText primary={text} /></NavLink>
-          </ListItem>
+          <div key={text} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-yellow-400 hover:shadow-inner flex justify-evenly">
+            <NavImages key={text} text={text} />
+            <NavLink
+              key={text}
+              className="menu-items text-xl mb-2 transition-all p-5 w-3/4 "
+              activeStyle={{ color: 'red' }}
+              to={`/${text.toLowerCase().replace(' ', '-')}`}
+            >
+              {text}
+            </NavLink>
+          </div>
+
         ))}
+        <Logo />
+        <LogoutButton />
       </List>
-      <LogoutButton />
     </Box>
   );
 
