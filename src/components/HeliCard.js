@@ -10,7 +10,7 @@ const HeliCard = (props) => {
     const location = useLocation();
 
     return(
-    <div className='w-full sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
+    <div className='w-full h-full sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
         backgroundImage: `url(${props.helicopter.img})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
@@ -18,7 +18,10 @@ const HeliCard = (props) => {
         display: 'flex',
         flexFlow: 'column',
         justifyContent: 'flex-start'}}>
-        <CardActionArea className="h-3/4 border-b border-gray-600" style={{
+        <CardActionArea
+            onClick={props.handleClickOpen}
+            className="h-3/4 border-b border-gray-600"
+            style={{
             display: 'flex',
             flexFlow: 'column',
             justifyContent: 'flex-start',
@@ -29,7 +32,7 @@ const HeliCard = (props) => {
             </div>
         
         </CardActionArea>
-        {location.pathname == '/remove-helicopter/' ? <LowerCardDelete helicopter={props.helicopter} /> : <LowerCardReserve helicopter={props.helicopter} />}
+        {location.pathname == '/remove-helicopter' ? <LowerCardDelete helicopter={props.helicopter} /> : <LowerCardReserve helicopter={props.helicopter} />}
             
     </div>
     

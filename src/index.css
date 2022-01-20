@@ -3,12 +3,12 @@
 }
 
 body {
-  background: -webkit-linear-gradient(45deg, rgb(34, 33, 33), rgb(35, 35, 58) 70%);
+  background: #151519;
   color: white;
 }
 
 #navbar {
-  background: -webkit-linear-gradient(90deg, rgb(48, 48, 48), rgb(28, 28, 46) 70%);
+  background: rgb(27, 27, 19);
 }
 
 .cool-title {
@@ -16,9 +16,42 @@ body {
   background: -webkit-linear-gradient(90deg, gray, white 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Raleway', sans-serif;
+}
+
+.montserrat {
   font-family: 'Montserrat', sans-serif;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif !important;
 }
 
 .menu-items {
   font-family: 'Kanit', sans-serif;
 }
+.MuiPaper-root {
+  background: linear-gradient(0deg, rgb(34, 33, 33) 70%, rgb(35, 35, 58));
+  color: white !important;
+}
+
+.MuiDialogTitle-root {
+  text-align: center;
+}
+
+.heli-details-list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15%;
+}
+
+.video {
+  z-index: 0;
+  position: fixed;
+  right:15%;
+  object-fit: none;
+  object-position: center center;
+  transform: scale(1.8);
+  overflow: hidden;
+}
+
