@@ -61,14 +61,14 @@ export default function CustomizedDialogs() {
   };
 
   return (
-    <div>
+    <div className="h-full flex justify-center">
       <Button
         className="
-        !h-2/3
+        !h-1/2
         !sm:h-1/2 
-        !mt-2 
+        !my-auto 
+        !mr-3
         !rounded-full 
-        !mr-5
         !text-sm
         !bg-opacity-75
         !w-24

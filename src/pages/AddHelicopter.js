@@ -1,5 +1,5 @@
 const AddHelicopter = () => (
-  <div>
+  <div id="main">
     <h1>New Helicopter</h1>
     <p>
       You will have a form displayed in this page. You will be able to add a
