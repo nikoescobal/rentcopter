@@ -4,14 +4,16 @@ const LOAD_RESERVATIONS_SUCCESS = 'App/reservations/LOAD_RESERVATIONS_SUCCESS';
 const initialState = {
   reservations_arr: [
     {
-      VIP: 'Reshy',
+      vip: 'Reshy',
       helicopter: 'Apache',
-      date: 'today',
+      date_start: '11/01/2022',
+      date_end: '12/01/2022',
     },
     {
-      VIP: 'Nikolas',
-      helicopter: 'Apache',
-      date: 'tomorrow',
+      vip: 'Nikolas',
+      helicopter: 'Cessna',
+      date_start: '15/01/2022',
+      date_end: '17/01/2022',
     },
   ],
   loading: true,
