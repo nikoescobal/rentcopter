@@ -41,22 +41,23 @@ RSpec.describe 'Helicopters API', type: :request do
   end
 
   describe 'POST /helicopters' do
-    before do
-      @user = User.create!(name: 'Tester', email:"user@gmail.com", password:"123456", admin: true, id: 4)
+    before(:each) do
+      @user = User.create!(name: 'Poop', email: "user@gmail.com", password: "123456", admin: true, id:800)
+      puts @user.id
     end
 
     it 'creates a new helicopter' do
+      @user2 = User.create!(name: 'Poopy', email: "user2@gmail.com", password: "123456", admin: true)
       expect do
-        post "/api/v1/helicopters", params: {
+        post '/api/v1/helicopters', params: {
           helicopter: {
-            name: 'Helicopter_4',
-            helicopter_description: 'Fourth helicopter description',
-            location: 'Berlin',
-            image: 'no-image',
-            price: 150,
-            availability: 24,
-            discount: 2.5,
-            user_id: @user.id
+            id: @user2.id,
+            name: 'Poopcopter',
+            model: 'Serious Model',
+            image: 'Serious.jpg',
+            description: 'Serious helicopter',
+            # user_id: @user.id,
+            rental_cost: 2000
           }
         }
       end.to change { Helicopter.count }.from(0).to(1)
