@@ -37,7 +37,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'active_model_serializers', '~> 0.10.12', require: true
   gem 'hirb'
-  gem "rack-cors"
+  gem 'rack-cors'
   gem 'react-rails'
   gem 'rubocop', '>= 1.0', '< 2.0'
   gem 'spring'

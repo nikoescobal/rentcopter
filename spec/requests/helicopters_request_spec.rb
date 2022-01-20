@@ -3,11 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Helicopters API', type: :request do
   describe 'GET /helicopters' do
     before do
-      User.create!(name: 'Tester', email:"user@gmail.com", password:"123456", admin: true, id:1)
-      Helicopter.create!(name: "Copter-X", model:"Z", image:"copter-x.png", description: "Ultra Luxury Heli. Comes with jacuzzi.", rental_cost:50000, user_id:1, id:1)
-      Helicopter.create!(name: "Apache-Y", model:"Z", image:"apache-y.png", description: "Military Escort Heli. Comes with three soldiers.",rental_cost:40000, user_id:1, id:2)
-      Helicopter.create!(name: "Deli-Heli", model:"Z", image:"deli-heli.png", description: "Get your deli meats with Deli-heli. Comes with charcuterie and gelato.",rental_cost:40000, user_id:1, id:3)
-      Helicopter.create!(name: "Airstriker", model:"Z", image:"airstriker.ng", description: "Airstrikes on demand. Deploy a desired hitman of choice to finish off targets.",rental_cost:100000, user_id:1, id:4)
+      User.create!(name: 'Tester', email: 'user@gmail.com', password: '123456', admin: true, id: 1)
+      Helicopter.create!(name: 'Copter-X', model: 'Z', image: 'copter-x.png',
+                         description: 'Ultra Luxury Heli. Comes with jacuzzi.', rental_cost: 50_000, user_id: 1, id: 1)
+      Helicopter.create!(name: 'Apache-Y', model: 'Z', image: 'apache-y.png',
+                         description: 'Military Escort Heli. Comes with three soldiers.', rental_cost: 40_000, user_id: 1, id: 2)
+      Helicopter.create!(name: 'Deli-Heli', model: 'Z', image: 'deli-heli.png',
+                         description: 'Get your deli meats with Deli-heli. Comes with charcuterie and gelato.', rental_cost: 40_000, user_id: 1, id: 3)
+      Helicopter.create!(name: 'Airstriker', model: 'Z', image: 'airstriker.ng',
+                         description: 'Airstrikes on demand. Deploy a desired hitman of choice to finish off targets.', rental_cost: 100_000, user_id: 1, id: 4)
       get '/api/v1/helicopters'
     end
 
@@ -24,11 +28,15 @@ RSpec.describe 'Helicopters API', type: :request do
 
   describe 'GET /helicopters/:id' do
     before do
-      user = User.create!(name: 'Tester', email:"user@gmail.com", password:"123456", admin: true, id: 4)
-      Helicopter.create!(name: "Copter-X", model:"Z", image:"copter-x.png", description: "Ultra Luxury Heli. Comes with jacuzzi.", rental_cost:50000, user_id:4, id:1)
-      Helicopter.create!(name: "Apache-Y", model:"Z", image:"apache-y.png", description: "Military Escort Heli. Comes with three soldiers.",rental_cost:40000, user_id:4, id:2)
-      Helicopter.create!(name: "Deli-Heli", model:"Z", image:"deli-heli.png", description: "Get your deli meats with Deli-heli. Comes with charcuterie and gelato.",rental_cost:40000, user_id:4, id:3)
-      Helicopter.create!(name: "Airstriker", model:"Z", image:"airstriker.ng", description: "Airstrikes on demand. Deploy a desired hitman of choice to finish off targets.",rental_cost:100000, user_id:4, id:4)
+      user = User.create!(name: 'Tester', email: 'user@gmail.com', password: '123456', admin: true, id: 4)
+      Helicopter.create!(name: 'Copter-X', model: 'Z', image: 'copter-x.png',
+                         description: 'Ultra Luxury Heli. Comes with jacuzzi.', rental_cost: 50_000, user_id: 4, id: 1)
+      Helicopter.create!(name: 'Apache-Y', model: 'Z', image: 'apache-y.png',
+                         description: 'Military Escort Heli. Comes with three soldiers.', rental_cost: 40_000, user_id: 4, id: 2)
+      Helicopter.create!(name: 'Deli-Heli', model: 'Z', image: 'deli-heli.png',
+                         description: 'Get your deli meats with Deli-heli. Comes with charcuterie and gelato.', rental_cost: 40_000, user_id: 4, id: 3)
+      Helicopter.create!(name: 'Airstriker', model: 'Z', image: 'airstriker.ng',
+                         description: 'Airstrikes on demand. Deploy a desired hitman of choice to finish off targets.', rental_cost: 100_000, user_id: 4, id: 4)
 
       get "/api/v1/helicopters/#{user.id}"
     end
@@ -42,12 +50,12 @@ RSpec.describe 'Helicopters API', type: :request do
 
   describe 'POST /helicopters' do
     before(:each) do
-      @user = User.create!(name: 'Poop', email: "user@gmail.com", password: "123456", admin: true, id:800)
+      @user = User.create!(name: 'Poop', email: 'user@gmail.com', password: '123456', admin: true, id: 800)
       puts @user.id
     end
 
     it 'creates a new helicopter' do
-      @user2 = User.create!(name: 'Poopy', email: "user2@gmail.com", password: "123456", admin: true)
+      @user2 = User.create!(name: 'Poopy', email: 'user2@gmail.com', password: '123456', admin: true)
       expect do
         post '/api/v1/helicopters', params: {
           helicopter: {
