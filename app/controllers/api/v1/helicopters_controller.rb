@@ -20,7 +20,7 @@ class Api::V1::HelicoptersController < ApplicationController
     @helicopter = @user.helicopters.new(helicopter_params)
 
     if @helicopter.save
-      render json: @helicopter, status: :created, location: api_v1_helicopter_url(@helicopter)
+      render json: @helicopter, status: :created
     else
       render json: @helicopter.errors, status: :unprocessable_entity
     end
