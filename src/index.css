@@ -29,3 +29,23 @@ body {
   justify-content: space-between;
   margin: 10px 15%;
 }
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.heli-form-button {
+  align-self: flex-end;
+  color: dodgerblue;
+  width: 25%;
+  padding: 5px;
+  border: 2px solid dodgerblue;
+  margin: 10px;
+  transition: 0.2s;
+}
+
+.heli-form-button:hover {
+  background-color: dodgerblue;
+  color: white;
+  border: 2px solid transparent;
+}
