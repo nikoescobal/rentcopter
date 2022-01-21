@@ -30,7 +30,6 @@ gem 'cancancan'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
   gem 'rswag-specs'
 end
 
@@ -43,6 +42,10 @@ group :development do
   gem 'react-rails'
   gem 'rubocop', '>= 1.0', '< 2.0'
   gem 'spring'
+end
+
+group :production, :test do
+    gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
