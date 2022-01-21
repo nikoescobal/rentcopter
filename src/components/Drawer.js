@@ -27,16 +27,16 @@ export default function TemporaryDrawer() {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
-      className="bg-slate-800 h-full text-white flex flex-col justify-center text-center md:hidden"
+      style={{ backgroundColor: '#1b1b13' }}
+      className=" h-full text-white flex flex-col justify-center text-center md:hidden "
     >
       <List className="h-full flex flex-col justify-center">
         {['Reservations', 'Add reservation', 'Add Helicopter', 'Remove Helicopter'].map((text) => (
-          <div key={text} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-yellow-400 hover:shadow-inner flex justify-evenly">
+          <div key={text} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-yellow-400 hover:shadow-inner flex justify-evenly duration-500">
             <NavImages key={text} text={text} />
             <NavLink
               key={text}
               className="menu-items text-xl mb-2 transition-all p-5 w-3/4 "
-              activeStyle={{ color: 'red' }}
               to={`/${text.toLowerCase().replace(' ', '-')}`}
             >
               {text}
@@ -52,16 +52,15 @@ export default function TemporaryDrawer() {
 
   return (
     <div className="sm:block md:hidden text-yellow-400 text-5xl absolute top-4 left-4 z-50">
-      <>
-        <FaBars onClick={toggleDrawer('left', true)} />
-        <Drawer
-          anchor="left"
-          open={state.left}
-          onClose={toggleDrawer('left', false)}
-        >
-          {list('left')}
-        </Drawer>
-      </>
+      <FaBars onClick={toggleDrawer('left', true)} />
+      <Drawer
+        className="rounded-r-xl"
+        anchor="left"
+        open={state.left}
+        onClose={toggleDrawer('left', false)}
+      >
+        {list('left')}
+      </Drawer>
     </div>
   );
 }
