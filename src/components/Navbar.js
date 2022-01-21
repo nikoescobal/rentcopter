@@ -11,6 +11,11 @@ import { downTop } from '../animations';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const isAdmin = sessionStorage.getItem('admin');
+  const normalMenu = ['Reservations', 'Add reservation'];
+  const adminMenu = ['Reservations', 'Add reservation', 'Add helicopter', 'Remove Helicopter'];
+  const getMenu = () => isAdmin=='true' ? adminMenu : normalMenu;
+  console.log(getMenu());
   return (
   <>
     <Drawer />
@@ -36,7 +41,7 @@ const Navbar = () => {
     shadow-gray-600"
     >
       <List className="h-full flex flex-col justify-center">
-        {['Reservations', 'Add reservation', 'Add helicopter', 'Remove Helicopter'].map((text) => (
+        {getMenu().map((text) => (
           <div key={uuidv4()} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-yellow-400 hover:shadow-inner flex justify-evenly transition-all delay-75">
             <NavImages key={uuidv4()} text={text} />
             <NavLink

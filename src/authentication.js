@@ -14,14 +14,21 @@ export const login = async(mail,password) => {
           }),
         },
       ).then(response => {
+          console.log(response.status);
+        if ( response.status !== 200 ){
+            console.log("Login didn't work");
+            return;
+        }
         sessionStorage.clear();
         let authheader = response.headers.get('Authorization');
         sessionStorage.setItem('token', authheader);
         return response.json();
       }).then(userInfo => {
+        if ( userInfo ){
         for (const [key, value] of Object.entries(userInfo)) {
             sessionStorage.setItem(key, value);
         }
+        window.location="/"};
       });
 }
 
