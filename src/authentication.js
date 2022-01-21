@@ -6,12 +6,16 @@ export const login = async(mail,password) => {
           headers: {
             'Content-type': 'application/json; charset=UTF-8',
           },
-          body: {
-              "user" : {
-                  "email" : mail,
-                  "password" : password
-              }
-          }
+          body: JSON.stringify({
+            "user":{
+                "email": mail,
+                "password": password
+            }
+          }),
         },
-      );
+      ).then(response => {
+        let authheader = response.headers.get('Authorization');
+        console.log(authheader);
+      });
 }
+

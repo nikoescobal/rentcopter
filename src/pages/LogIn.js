@@ -41,7 +41,7 @@ const LogIn = () => (
         cursor-pointer"
         onClick={(e) => {
           e.preventDefault;
-          login(form.email,form.password);
+          login(form.email.value,form.password.value);
         }}
         >
           Log In
