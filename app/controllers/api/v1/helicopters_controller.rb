@@ -1,6 +1,6 @@
 class Api::V1::HelicoptersController < ApplicationController
   before_action :set_helicopter, only: %i[show update destroy]
-  load_and_authorize_resource
+  before_action :authenticate_user!
 
   # GET /helicopters
   def index
@@ -17,8 +17,9 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # POST /helicopters
   def create
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @helicopter = @user.helicopters.new(helicopter_params)
+    authorize! :create, @helicopter
 
     if @helicopter.save
       render json: @helicopter, status: :created, location: api_v1_helicopter_url(@helicopter)
