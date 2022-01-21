@@ -54,3 +54,4 @@ gem 'devise-jwt'
 
 gem 'rack-cors'
 gem 'rswag'
+gem 'cancancan'
