@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { login } from '../authentication';
 /* eslint-disable */
 const LogIn = () => (
   <div className="h-screen w-screen">
     <div className="block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-1/2 m-auto mt-48">
       <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Log In </h1>
-      <form>
+      <form id="form">
         <div className="form-group">
           <br />
           <input type="email" id="email" placeholder="Enter email address" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
@@ -20,7 +21,7 @@ const LogIn = () => (
           </div>
         </div>
         <button
-          type="submit"
+          type="button"
           className="w-full
         px-6
         py-2.5
@@ -38,6 +39,10 @@ const LogIn = () => (
         duration-150
         ease-in-out
         cursor-pointer"
+        onClick={(e) => {
+          e.preventDefault;
+          login(form.email,form.password);
+        }}
         >
           Log In
         </button>
