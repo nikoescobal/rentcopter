@@ -17,6 +17,7 @@ gem 'rswag'
 gem 'rspec-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rswag-specs'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
