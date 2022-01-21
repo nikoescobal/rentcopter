@@ -14,8 +14,11 @@ export const login = async(mail,password) => {
           }),
         },
       ).then(response => {
-        let authheader = response.headers.get('Authorization');
-        console.log(authheader);
+        // let authheader = response.headers.get('Authorization');
+        // sessionStorage.setItem('token', authheader);
+        for (let header of response.headers) {
+            console.log(header);
+          }
       });
 }
 
