@@ -2,6 +2,7 @@ require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
+require "devise"
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
@@ -23,6 +24,12 @@ module Rentcopter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #
