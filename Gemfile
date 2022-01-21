@@ -25,7 +25,6 @@ end
 
 group :development do
   gem 'listen', '~> 3.3'
-  gem 'active_model_serializers', '~> 0.10.12', require: true
   gem 'hirb'
   gem 'react-rails'
   gem 'spring'
