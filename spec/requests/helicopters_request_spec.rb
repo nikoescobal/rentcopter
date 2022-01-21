@@ -50,12 +50,11 @@ RSpec.describe 'Helicopters API', type: :request do
 
   login_user
 
-  let(:valid_attributes) {
-      { :title => "Test title!", :description => "This is a test description", :status => "draft" }
-  }
+  let(:valid_attributes) do
+    { title: 'Test title!', description: 'This is a test description', status: 'draft' }
+  end
 
   let(:valid_session) { {} }
-
 
   describe 'POST /helicopters' do
     before(:each) do
