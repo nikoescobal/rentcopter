@@ -48,6 +48,15 @@ RSpec.describe 'Helicopters API', type: :request do
     end
   end
 
+  login_user
+
+  let(:valid_attributes) {
+      { :title => "Test title!", :description => "This is a test description", :status => "draft" }
+  }
+
+  let(:valid_session) { {} }
+
+
   describe 'POST /helicopters' do
     before(:each) do
       @user = User.create!(name: 'Poop', email: 'user@gmail.com', password: '123456', admin: true, id: 800)

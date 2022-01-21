@@ -6,13 +6,13 @@ class HelicoptersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get helicopters_url, as: :json
+    get api_v1_helicopters_url(@helicopter), as: :json
     assert_response :success
   end
 
   test 'should create helicopter' do
     assert_difference('Helicopter.count') do
-      post helicopters_url, params: { helicopter: {} }, as: :json
+      post api_v1_helicopters_url(@helicopter), params: { helicopter: {} }, as: :json
     end
 
     assert_response 201
