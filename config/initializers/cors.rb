@@ -9,7 +9,10 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins ''
     resource '*',
-      headers: :any,
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+      headers['Access-Control-Request-Method'] = '*'
+      headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
