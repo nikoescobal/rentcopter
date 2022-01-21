@@ -14,13 +14,14 @@ export const login = async(mail,password) => {
           }),
         },
       ).then(response => {
+        sessionStorage.clear();
         let authheader = response.headers.get('Authorization');
         sessionStorage.setItem('token', authheader);
         return response.json();
       }).then(userInfo => {
-        Object.keys(userInfo).map(function(key, value) {
+        for (const [key, value] of Object.entries(userInfo)) {
             sessionStorage.setItem(key, value);
-          });
+        }
       });
 }
 
