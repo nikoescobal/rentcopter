@@ -22,7 +22,7 @@ class Api::V1::HelicoptersController < ApplicationController
     authorize! :create, @helicopter
 
     if @helicopter.save
-      render json: @helicopter, status: :created, location: api_v1_helicopter_url(@helicopter)
+      render json: @helicopter, status: :created
     else
       render json: @helicopter.errors, status: :unprocessable_entity
     end
