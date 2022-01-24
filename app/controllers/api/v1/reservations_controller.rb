@@ -1,5 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
-
+  load_and_authorize_resource
   # GET /reservations
   def index
     @reservations = current_user.reservations
@@ -8,7 +8,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations/1
   def show
-    render json: @reservation
+    render json: Reservation.find(params[:id])
   end
 
   # POST /reservations

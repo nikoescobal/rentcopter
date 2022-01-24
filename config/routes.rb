@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :helicopters, only: [:index, :create, :destroy, :show]
       resources :sessions, only: [:create, :destroy]
-      resources :reservations, only: [:index, :create, :destroy]
+      resources :reservations, only: [:index, :create, :destroy, :show]
       resources :users, only: [:index, :create, :show] 
     end
   end
