@@ -92,7 +92,7 @@ export const register = async(name,mail,password) => {
     })
   }
 
-  export const addHeli = async(name, cost, capacity, picture ) => {
+  export const addHeli = async(name, desc, cost, capacity, range, speed, image ) => {
     await fetch(
         baseAPI+'api/v1/helicopters',
         {
@@ -104,9 +104,12 @@ export const register = async(name,mail,password) => {
           body: JSON.stringify({
             "helicopter":{
                 "name": name,
-                "model": 'asdfasdf',
-                "description": 'hardcoded for now.',
-                "image": 'heello.png',
+                "description": desc,
+                "rental_cost": cost,
+                "capacity": capacity,
+                "flying_range": range,
+                "flying_speed": speed,
+                "image": image
             }
           }),
         },
