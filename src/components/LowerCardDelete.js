@@ -1,6 +1,7 @@
 import React from 'react';
+import { delete_heli } from '../logic/api';
 /* eslint-disable */
-const LowerCardDelete = () => (
+const LowerCardDelete = (props) => (
   <div className=" bg-gray-900 w-full h-1/4 flex flex-row-reverse justify-center bg-opacity-50">
     <button type="button" className="
                 h-2/3
@@ -15,6 +16,9 @@ const LowerCardDelete = () => (
                 hover:bg-red-800
                 transition-all
                 text-white"
+                onClick={() => {
+                  delete_heli(props.helicopter.id);
+                }}
     >
       DELETE
     </button>

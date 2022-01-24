@@ -1,3 +1,5 @@
+import { popup } from "./popup";
+
 export const baseAPI = "https://gentle-bastion-08437.herokuapp.com/";
 
 export const login = async(mail,password) => {
@@ -55,11 +57,10 @@ export const reserve = async(start, end, helicopter) => {
   ).then(response => {
       console.log(response.status);
     if ( response.status == 201 ){
-        console.log("Thing created");
-        return;
+      popup("Reservation created","green");
     }
     else {
-      console.log("You failed!");
+      popup("Couldn't create reservation","red");
     }
 })
 }
@@ -83,11 +84,10 @@ export const register = async(name,mail,password) => {
     ).then(response => {
         console.log(response.status);
       if ( response.status == 200 ){
-          console.log("You did it!");
-          return;
+        popup("Registered succesfully! Please log in.","green");
       }
       else {
-        console.log("Didn't work");
+        popup("Couldn't register new account","red");
       }
     })
   }
@@ -114,13 +114,32 @@ export const register = async(name,mail,password) => {
           }),
         },
       ).then(response => {
-          console.log(response.status);
         if ( response.status == 201 ){
-            console.log("Heli created");
-            return;
+          popup("Helicopter added succesfully","green");
         }
         else {
-          console.log("Didn't work");
+          popup("Couldn't add helicopter","red");
         }
       })
     }
+
+
+export const delete_heli = async(id) => {
+  await fetch(
+      baseAPI+"api/v1/helicopters/"+id,
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Authorization': sessionStorage.getItem('token'),
+        },
+      },
+    ).then(response => {
+      if ( response.status == 204 ){
+          popup("Helicopter removed succesfully","green");
+      }
+      else {
+        popup("Error while creating helicopter","red");
+      }
+    })
+  }
