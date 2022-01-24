@@ -1,15 +1,18 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import ReservationCard from '../components/ReservationCard';
 import { topDown } from '../animations';
+import { fetchReservations } from '../redux/reducers/reservations';
 
 const Reservations = () => {
+  const dispatch = useDispatch();
   window.sessionStorage.getItem("token") == null ? window.location="/login" : null
   const reservations = useSelector((state) => state.reservations.reservations_arr);
   useEffect(() => {
+    dispatch(fetchReservations());
     topDown();
-  }, []);
+  }, [dispatch]);
   return (
     <div id="main" className="p-4 md:p-24 flex justify-center flex-col w-full md:w-3/4 lg:w-5/6 h-screen transition-all opacity-0 -translate-y-full origin-left ease-out duration-500">
       <h1 className="cool-title text-center !text-3xl md:!text-5xl">Reservations</h1>

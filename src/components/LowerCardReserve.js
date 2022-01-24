@@ -8,7 +8,7 @@ const LowerCardReserve = (props) => (
     <HeliReserve helicopter={props.helicopter} />
                 <div className="ml-3 my-auto flex">
                     <Money />
-                    <p className="ml-2 text-xs text-white " style={{fontFamily: 'Montserrat'}}>Price per day:<br/><span className="text-md font-bold">{props.helicopter.price_per_day}$</span></p>
+                    <p className="ml-2 text-xs text-white " style={{fontFamily: 'Montserrat'}}>Price per day:<br/><span className="text-md font-bold">{props.helicopter.rental_cost}$</span></p>
                 </div>
 
   </div>

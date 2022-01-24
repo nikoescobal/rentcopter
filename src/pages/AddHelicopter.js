@@ -1,21 +1,27 @@
 import { useEffect } from 'react';
 import { topDown } from '../animations';
+import { addHeli } from '../logic/api';
 
 const AddHelicopter = () => {
   window.sessionStorage.getItem("token") == null ? window.location="/login" : null
   useEffect(() => {
     topDown();
   }, []);
+  
+  const createHeli = () => {
+    addHeli(new_heli.name.value, new_heli.cost.value, new_heli.capacity.value, new_heli.pic.value);
+  }
+
   return (
     <div id="main" className="p-4 md:p-24 flex justify-center flex-col w-full md:w-3/4 lg:w-5/6 h-screen transition-all opacity-0 -translate-y-full origin-top ease-out duration-500">
       <div className="block p-6 rounded-lg shadow-lg bg-white w-3/4 lg:w-2/3 h-auto m-auto mt-20">
         <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">New helicopter </h1>
-        <form>
+        <form id="new_heli">
           <div className=" mb-4">
-            <label htmlFor="user" className="inline-block text-gray-700 w-full">
+            <label htmlFor="name" className="inline-block text-gray-700 w-full">
               Name
               <br />
-              <input type="text" id="user" placeholder="Enter username" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input type="text" id="name" placeholder="Enter model" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
           <div className=" mb-4">
@@ -32,13 +38,13 @@ const AddHelicopter = () => {
             </label>
           </div>
           <div className=" mb-6">
-            <label htmlFor="confirm-password" className="inline-block mb-2 text-gray-700 w-full">
+            <label htmlFor="pic" className="inline-block mb-2 text-gray-700 w-full">
               Picture
-              <input id="confirm-password" type="password" placeholder="Idk how but we'll upload it" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input id="pic" type="file" placeholder="Idk how but we'll upload it" accept="image/png, .jpeg, .jpg" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
           <button
-            type="submit"
+            type="button"
             className="w-full
         px-6
         py-2.5
@@ -56,6 +62,7 @@ const AddHelicopter = () => {
         duration-150
         ease-in-out
         cursor-pointer"
+            onClick={createHeli}
           >
             Register
           </button>
