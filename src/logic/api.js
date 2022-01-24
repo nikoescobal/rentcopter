@@ -1,3 +1,4 @@
+import { downTop } from "../animations";
 import { popup } from "./popup";
 
 export const baseAPI = "https://gentle-bastion-08437.herokuapp.com/";
@@ -20,10 +21,10 @@ export const login = async(mail,password) => {
       ).then(response => {
           console.log(response.status);
         if ( response.status !== 200 ){
-            console.log("Login didn't work");
-            return;
+          popup("Invalid credentials","red");
         }
         sessionStorage.clear();
+        downTop();
         let authheader = response.headers.get('Authorization');
         sessionStorage.setItem('token', authheader);
         return response.json();
@@ -85,6 +86,8 @@ export const register = async(name,mail,password) => {
         console.log(response.status);
       if ( response.status == 200 ){
         popup("Registered succesfully! Please log in.","green");
+        downTop();
+        window.location='/login';
       }
       else {
         popup("Couldn't register new account","red");

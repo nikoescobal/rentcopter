@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { topDown } from '../animations';
 import { login } from '../logic/api';
 const LogIn = () => {
+  useEffect(() => {
+    topDown();
+  }, []);
+  sessionStorage.getItem('token') !== null ? window.location="/" : null
   return (
   <div className="h-screen w-screen">
-    <div className="block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-1/2 m-auto mt-48">
+    <div id="main" className="opacity-0 block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-1/2 m-auto mt-48 transition-all duration-1000 -translate-y-full">
       <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Log In </h1>
       <form id="form">
         <div className="form-group">

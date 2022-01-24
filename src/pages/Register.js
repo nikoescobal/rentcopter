@@ -2,9 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { register } from '../logic/api';
 
-const Register = () => (
+const Register = () => {
+  sessionStorage.getItem('token') !== null ? window.location="/" : null
+  return (
   <div className="h-screen w-screen">
-    <div className="block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-48">
+    <div id="main" className="opacity-1 block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-48 transition-all duration-1000">
       <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Register </h1>
       <form id="form">
         <div className=" mb-4">
@@ -68,5 +70,6 @@ const Register = () => (
     </div>
   </div>
 );
+}
 
 export default Register;
