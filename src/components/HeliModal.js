@@ -77,8 +77,8 @@ export default function CustomizedDialogs(props) {
         open={open}
       >
         <DialogContent dividers>
-            <div className=' h-36 w-full h-full !mx-auto md:h-60 rounded-2xl flex overflow-y-hidden' style={{
-              backgroundImage: `url(${helicopter.img})`, 
+            <div className='w-full h-full !mx-auto md:h-60 rounded-2xl flex overflow-y-hidden' style={{
+              backgroundImage: `url(${helicopter.image})`, 
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               borderRadius: 10,
