@@ -5,6 +5,7 @@ import ReservationCard from '../components/ReservationCard';
 import { topDown } from '../animations';
 
 const Reservations = () => {
+  window.sessionStorage.getItem("token") == null ? window.location="/login" : null
   const reservations = useSelector((state) => state.reservations.reservations_arr);
   useEffect(() => {
     topDown();

@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { login } from '../logic/api';
-/* eslint-disable */
-const LogIn = () => (
+const LogIn = () => {
+  return (
   <div className="h-screen w-screen">
     <div className="block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-1/2 m-auto mt-48">
       <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Log In </h1>
@@ -55,5 +55,6 @@ const LogIn = () => (
     </div>
   </div>
 );
+}
 
 export default LogIn;

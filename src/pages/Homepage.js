@@ -4,6 +4,7 @@ import { homepageAnims, topDown, downTop } from '../animations';
 
 const Homepage = () => {
   const navigate = useNavigate();
+  window.sessionStorage.getItem("token") == null ? window.location="/login" : null
   useEffect(() => {
     topDown();
     homepageAnims();

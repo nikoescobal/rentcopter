@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { register } from '../logic/api';
 
 const Register = () => (
   <div className="h-screen w-screen">
     <div className="block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-48">
       <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Register </h1>
-      <form>
+      <form id="form">
         <div className=" mb-4">
           <label htmlFor="user" className="inline-block text-gray-700 w-full">
             Username
             <br />
-            <input type="text" id="user" placeholder="Enter username" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+            <input type="text" id="name" placeholder="Enter username" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
           </label>
         </div>
         <div className=" mb-4">
@@ -33,7 +34,7 @@ const Register = () => (
           </label>
         </div>
         <button
-          type="submit"
+          type="button"
           className="w-full
         px-6
         py-2.5
@@ -51,6 +52,10 @@ const Register = () => (
         duration-150
         ease-in-out
         cursor-pointer"
+        onClick={(e) => {
+          e.preventDefault;
+          register(form.name.value,form.email.value,form.password.value);
+        }}
         >
           Register
         </button>

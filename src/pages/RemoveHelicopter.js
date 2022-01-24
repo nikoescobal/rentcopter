@@ -4,6 +4,7 @@ import HeliCard from '../components/HeliCard';
 import { topDown } from '../animations';
 
 const RemoveHelicpoter = () => {
+  window.sessionStorage.getItem("token") == null ? window.location="/login" : null
   const helicopters = useSelector((state) => state.helicopters.helicopters_arr);
   useEffect(() => {
     topDown();

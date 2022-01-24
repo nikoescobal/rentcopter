@@ -44,19 +44,18 @@ export const reserve = async(start, end, helicopter) => {
         'Authorization': sessionStorage.getItem('token')
       },
       body: JSON.stringify({
-        "reservation":[
+        "reservation":
           {
-            "helicopter": helicopter,
+            "helicopter_id": helicopter.id,
             "date_start": start,
             "date_end": end
           }
-        ]
       }),
     },
   ).then(response => {
       console.log(response.status);
     if ( response.status == 201 ){
-        console.log("THing created");
+        console.log("Thing created");
         return;
     }
     else {
@@ -64,3 +63,31 @@ export const reserve = async(start, end, helicopter) => {
     }
 })
 }
+
+export const register = async(name,mail,password) => {
+  await fetch(
+      baseAPI+"signup",
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({
+          "user":{
+              "name": name,
+              "email": mail,
+              "password": password
+          }
+        }),
+      },
+    ).then(response => {
+        console.log(response.status);
+      if ( response.status == 200 ){
+          console.log("You did it!");
+          return;
+      }
+      else {
+        console.log("Didn't work");
+      }
+    })
+  }

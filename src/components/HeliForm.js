@@ -71,7 +71,7 @@ const HeliForm = (props) => {
       <span className={classVerifier(amount)}>
         {messageVerifier(amount)}
       </span>
-      <button type="submit" className="heli-form-button" onClick={(e) => {
+      <button type="button" className="heli-form-button" onClick={(e) => {
           e.preventDefault;
           console.log(props.helicopter);
           reserve(reserve_form.start_date.value,reserve_form.end_date.value, props.helicopter);
