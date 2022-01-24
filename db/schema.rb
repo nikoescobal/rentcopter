@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2022_01_24_084844) do
     t.integer "capacity"
     t.integer "flying_range"
     t.integer "flying_speed"
-    t.string "avatar"
     t.index ["user_id"], name: "index_helicopters_on_user_id"
   end
 

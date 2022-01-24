@@ -6,7 +6,6 @@ ruby '3.0.2'
 gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'cancancan'
-gem 'carrierwave', '~> 2.0'
 gem 'devise'
 gem 'devise-jwt'
 gem 'jwt'
