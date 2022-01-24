@@ -39,7 +39,7 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <div className="sm:block md:hidden text-yellow-400 text-5xl">
+    <div className="sm:block md:hidden text-yellow-400 text-5xl absolute top-4 left-4">
       <>
         <FaBars onClick={toggleDrawer('left', true)} />
         <Drawer

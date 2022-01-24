@@ -9,7 +9,6 @@ import Navbar from './components/Navbar';
 
 const App = () => (
   <>
-
     <Router>
       <Navbar />
       <Routes>
@@ -20,10 +19,8 @@ const App = () => (
         <Route path="/remove-helicopter" element={<RemoveHelicopter />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-
     </Router>
   </>
-
 );
 
 export default App;
