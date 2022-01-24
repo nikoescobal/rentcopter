@@ -1,6 +1,8 @@
 class Api::V1::HelicoptersController < ApplicationController
   before_action :set_helicopter, only: %i[show update destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
+
 
   # GET /helicopters
   def index
