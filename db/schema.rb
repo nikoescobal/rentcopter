@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_105648) do
+ActiveRecord::Schema.define(version: 2022_01_24_084844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_105648) do
     t.integer "capacity"
     t.integer "flying_range"
     t.integer "flying_speed"
+    t.string "avatar"
     t.index ["user_id"], name: "index_helicopters_on_user_id"
   end
 
