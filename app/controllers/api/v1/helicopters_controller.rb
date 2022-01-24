@@ -1,5 +1,6 @@
 class Api::V1::HelicoptersController < ApplicationController
   before_action :set_helicopter, only: %i[show update destroy]
+  before_action :authenticate_user!
 
   # GET /helicopters
   def index
@@ -16,8 +17,9 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # POST /helicopters
   def create
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @helicopter = @user.helicopters.new(helicopter_params)
+    authorize! :create, @helicopter
 
     if @helicopter.save
       render json: @helicopter, status: :created
@@ -49,7 +51,7 @@ class Api::V1::HelicoptersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def helicopter_params
-    params.require(:helicopter).permit(:name, :model, :image, :description, :rental_cost, :capacity, :flying_range,
-                                       :flying_speed)
+    params.require(:helicopter).permit(:name, :model, :description, :rental_cost, :capacity, :flying_range,
+                                       :flying_speed, :avatar)
   end
 end
