@@ -5,6 +5,7 @@ import { topDown } from '../animations';
 
 const RemoveHelicpoter = () => {
   window.sessionStorage.getItem("token") == null ? window.location="/login" : null
+  window.sessionStorage.getItem("admin") !== "true" ? window.location="/" : null
   const helicopters = useSelector((state) => state.helicopters.helicopters_arr);
   useEffect(() => {
     topDown();

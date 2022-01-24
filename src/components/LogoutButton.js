@@ -20,6 +20,10 @@ const LogoutButton = () => (
             font-bold
              leading-relaxed
         "
+      onClick={() => {
+        sessionStorage.clear();
+        window.location="/login";
+      }}
     >
       LOGOUT
       <svg

@@ -3,6 +3,7 @@ import { topDown } from '../animations';
 
 const AddHelicopter = () => {
   window.sessionStorage.getItem("token") == null ? window.location="/login" : null
+  window.sessionStorage.getItem("admin") !== "true" ? window.location="/" : null
   useEffect(() => {
     topDown();
   }, []);
