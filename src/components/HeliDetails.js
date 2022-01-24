@@ -3,10 +3,10 @@ import { PropTypes } from 'prop-types';
 const HeliDetails = (props) => {
   const {
     helicopter: {
-      speed,
+      flying_speed: speed,
       capacity,
-      autonomy,
-      price_per_day: price,
+      flying_range: autonomy,
+      rental_cost: price,
     },
   } = props;
 

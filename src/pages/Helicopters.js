@@ -1,14 +1,17 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import HeliModal from '../components/HeliModal';
 import { topDown } from '../animations';
+import { fetchHelicopters } from '../redux/reducers/helicopters';
 
 const Helicopters = () => {
+  const dispatch = useDispatch();
   window.sessionStorage.getItem("token") == null ? window.location="/login" : null
   const helicopters = useSelector((state) => state.helicopters.helicopters_arr);
   useEffect(() => {
+    dispatch(fetchHelicopters());
     topDown();
-  }, []);
+  }, [dispatch]);
   return (
     <div id="main" className="p-4 md:p-24 flex justify-center flex-col w-full md:w-3/4 lg:w-5/6 h-screen transition-all opacity-0 -translate-y-full origin-top ease-out duration-500">
       <h1 className="raleway cool-title text-center !text-3xl md:!text-5xl">Helicopters</h1>

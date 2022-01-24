@@ -4,7 +4,11 @@ import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
 import { reserve } from '../logic/api';
 
 const HeliForm = (props) => {
-  const {helicopter:{price_per_day, id}} = props
+  const {
+    helicopter: {
+      rental_cost: price,
+    }
+  } = props
 
   const initialForm = {
     'start-date': TODAY,
@@ -20,7 +24,7 @@ const HeliForm = (props) => {
     });
   };
 
-  const amount = dateDifference(form['start-date'], form['end-date'], price_per_day);
+  const amount = dateDifference(form['start-date'], form['end-date'], price);
 
   const messageVerifier = (amount) => {
     if (amount > 0) {
@@ -74,7 +78,7 @@ const HeliForm = (props) => {
       <button type="button" className="heli-form-button" onClick={(e) => {
           e.preventDefault;
           console.log(props.helicopter);
-          reserve(reserve_form.start_date.value,reserve_form.end_date.value, props.helicopter);
+          reserve(reserve_form.start_date.value, reserve_form.end_date.value, props.helicopter);
         }}>RESERVE</button>
     </form>
   );

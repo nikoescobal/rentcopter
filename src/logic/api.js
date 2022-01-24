@@ -1,4 +1,4 @@
-const baseAPI = "https://gentle-bastion-08437.herokuapp.com/";
+export const baseAPI = "https://gentle-bastion-08437.herokuapp.com/";
 
 export const login = async(mail,password) => {
     await fetch(
@@ -91,3 +91,33 @@ export const register = async(name,mail,password) => {
       }
     })
   }
+
+  export const addHeli = async(name, cost, capacity, picture ) => {
+    await fetch(
+        baseAPI+'api/v1/helicopters',
+        {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            'Authorization': sessionStorage.getItem('token'),
+          },
+          body: JSON.stringify({
+            "helicopter":{
+                "name": name,
+                "model": 'asdfasdf',
+                "description": 'hardcoded for now.',
+                "image": 'heello.png',
+            }
+          }),
+        },
+      ).then(response => {
+          console.log(response.status);
+        if ( response.status == 201 ){
+            console.log("Heli created");
+            return;
+        }
+        else {
+          console.log("Didn't work");
+        }
+      })
+    }

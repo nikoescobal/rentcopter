@@ -17,15 +17,14 @@ const Navbar = () => {
   const getMenu = () => isAdmin=='true' ? adminMenu : normalMenu;
   console.log(getMenu());
   return (
-  <>
+  <div className='md:w-1/4 lg:w-1/6 block'>
     <Drawer />
     <div
       id="navbar"
       className="
+      fixed
       z-50
       rounded-r-2xl
-      md:w-1/4
-      lg:w-1/6
       h-screen
       bg-slate-800
       justify-start
@@ -69,7 +68,7 @@ const Navbar = () => {
         <LogoutButton />
       </List>
     </div>
-  </>
+  </div>
 
 );}
 

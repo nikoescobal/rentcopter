@@ -1,3 +1,5 @@
+import { baseAPI } from '../../logic/api';
+
 const LOAD_RESERVATIONS = 'App/reservations/LOAD_RESERVATIONS';
 const LOAD_RESERVATIONS_SUCCESS = 'App/reservations/LOAD_RESERVATIONS_SUCCESS';
 
@@ -27,6 +29,18 @@ export const loadReservationsSuccess = (payload) => ({
   type: LOAD_RESERVATIONS_SUCCESS,
   payload,
 });
+
+export const fetchReservations = () => async (dispatch) => {
+  dispatch(loadReservations());
+  const fetchedData = await fetch(baseAPI + 'api/v1/reservations', {
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      'Authorization': sessionStorage.getItem('token')
+    },
+  });
+  const result = await fetchedData.json();
+  dispatch(loadReservationsSuccess(result));
+}
 
 const reservationsReducer = (state = initialState, action) => {
   switch (action.type) {
