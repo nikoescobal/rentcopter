@@ -86,7 +86,7 @@ export default function CustomizedDialogs(props) {
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
           Reserve Helicopter
         </BootstrapDialogTitle>
-          <HeliForm price={props.price} />
+          <HeliForm helicopter={props.helicopter} />
       </BootstrapDialog>
     </div>
   );

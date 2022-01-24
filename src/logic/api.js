@@ -1,6 +1,8 @@
+const baseAPI = "https://gentle-bastion-08437.herokuapp.com/";
+
 export const login = async(mail,password) => {
     await fetch(
-        `https://gentle-bastion-08437.herokuapp.com/login`,
+        baseAPI+"login",
         {
           method: 'POST',
           headers: {
@@ -32,3 +34,33 @@ export const login = async(mail,password) => {
       });
 }
 
+export const reserve = async(start, end, helicopter) => {
+  await fetch(
+    baseAPI+"api/v1/reservations",
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': sessionStorage.getItem('token')
+      },
+      body: JSON.stringify({
+        "reservation":[
+          {
+            "helicopter": helicopter,
+            "date_start": start,
+            "date_end": end
+          }
+        ]
+      }),
+    },
+  ).then(response => {
+      console.log(response.status);
+    if ( response.status == 201 ){
+        console.log("THing created");
+        return;
+    }
+    else {
+      console.log("You failed!");
+    }
+})
+}

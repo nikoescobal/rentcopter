@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { login } from '../authentication';
+import { login } from '../logic/api';
 /* eslint-disable */
 const LogIn = () => (
   <div className="h-screen w-screen">

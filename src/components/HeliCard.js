@@ -30,7 +30,7 @@ const HeliCard = (props) => {
             <div className="h-10 w-full bg-gray-900 bg-opacity-75 rounded-t-md">
                 <h1 className="cool-title ml-4 my-auto text-left h-full">{props.helicopter.name}</h1>
             </div>  
-        </CardActionArea>  
+        </CardActionArea> 
         {location.pathname == '/remove-helicopter' ? <LowerCardDelete helicopter={props.helicopter} /> : <LowerCardReserve helicopter={props.helicopter} />} 
     </div>
 );}

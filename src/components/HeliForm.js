@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
+import { reserve } from '../logic/api';
 
 const HeliForm = (props) => {
-  const { price } = props;
+  const {helicopter:{price_per_day, id}} = props
 
   const initialForm = {
     'start-date': TODAY,
@@ -19,7 +20,7 @@ const HeliForm = (props) => {
     });
   };
 
-  const amount = dateDifference(form['start-date'], form['end-date'], price);
+  const amount = dateDifference(form['start-date'], form['end-date'], price_per_day);
 
   const messageVerifier = (amount) => {
     if (amount > 0) {
@@ -36,13 +37,13 @@ const HeliForm = (props) => {
   };
 
   return (
-    <form className="flex flex-col">
+    <form className="flex flex-col" id="reserve_form">
       <div className="flex space-evenly mb-10">
         <label htmlFor="date-start" className="text-center">
           <span>Reservation start-date:</span>
           <input
             type="date"
-            id="start-date"
+            id="start_date"
             name="start-date"
             min={TODAY}
             max={MONTHLATER}
@@ -56,7 +57,7 @@ const HeliForm = (props) => {
           <span>Reservation end-date:</span>
           <input
             type="date"
-            id="end-date"
+            id="end_date"
             name="end-date"
             min={TODAY}
             max={MONTHLATER}
@@ -70,13 +71,17 @@ const HeliForm = (props) => {
       <span className={classVerifier(amount)}>
         {messageVerifier(amount)}
       </span>
-      <button type="submit" className="heli-form-button">RESERVE</button>
+      <button type="submit" className="heli-form-button" onClick={(e) => {
+          e.preventDefault;
+          console.log(props.helicopter);
+          reserve(reserve_form.start_date.value,reserve_form.end_date.value, props.helicopter);
+        }}>RESERVE</button>
     </form>
   );
 };
 
 HeliForm.propTypes = {
-  price: PropTypes.string.isRequired,
+  helicopter: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default HeliForm;
