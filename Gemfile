@@ -48,6 +48,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
+gem 'carrierwave', '~> 2.0'
 
 gem 'jwt'
 
