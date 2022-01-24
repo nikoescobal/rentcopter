@@ -5,18 +5,11 @@ import HeliReserve from './HeliReserve';
 
 const LowerCardReserve = (props) => (
   <div className=" bg-gray-900 w-full h-1/4 flex flex-row-reverse justify-between bg-opacity-50">
-    <HeliReserve />
-    <div className="ml-3 my-auto flex">
-      <Money />
-      <p className="ml-2 text-xs text-white " style={{ fontFamily: 'Montserrat' }}>
-        Price per day:
-        <br />
-        <span className="text-md font-bold">
-          {props.helicopter.price_per_day}
-          $
-        </span>
-      </p>
-    </div>
+    <HeliReserve price={props.helicopter.price_per_day} />
+                <div className="ml-3 my-auto flex">
+                    <Money />
+                    <p className="ml-2 text-xs text-white " style={{fontFamily: 'Montserrat'}}>Price per day:<br/><span className="text-md font-bold">{props.helicopter.price_per_day}$</span></p>
+                </div>
 
   </div>
 );
