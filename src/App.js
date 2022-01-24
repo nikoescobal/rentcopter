@@ -1,6 +1,10 @@
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
+import { useEffect } from 'react';
+import { fetchHelicopters } from './redux/reducers/helicopters';
+import { fetchReservations } from './redux/reducers/reservations';
+import { useDispatch } from 'react-redux';
 import Helicopters from './pages/Helicopters';
 import Reservations from './pages/Reservations';
 import Homepage from './pages/Homepage';
@@ -12,6 +16,11 @@ import LogIn from './pages/LogIn';
 import Register from './pages/Register';
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchHelicopters());
+    dispatch(fetchReservations());
+  }, [dispatch]);
   const { pathname } = window.location;
   return (
     <>
