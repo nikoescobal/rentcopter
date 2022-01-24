@@ -28,7 +28,7 @@ export const popup = (message, color) => {
       error.classList.add('opacity-0');
     }, 2500);
     parent.appendChild(error);
-    // setTimeout(() => {
-    //   parent.removeChild(document.getElementById('error-popup'));
-    // }, 3500);
+    setTimeout(() => {
+      parent.removeChild(document.getElementById('error-popup'));
+    }, 3500);
   }

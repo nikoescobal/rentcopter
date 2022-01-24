@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 const ReservationCard = (props) => {
     const url = useSelector((state) => state.helicopters.helicopters_arr.filter(heli => heli.name == props.reservation.vip));
     return(
-    <div className='w-full h-38 sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
+    <div className='w-full h-36 sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
         backgroundImage: `url(${props.reservation.helicopter.image})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center center',

@@ -16,11 +16,13 @@ const Navbar = () => {
   const adminMenu = ['Reservations', 'Add reservation', 'Add helicopter', 'Remove Helicopter'];
   const getMenu = () => isAdmin=='true' ? adminMenu : normalMenu;
   return (
-  <div className='md:w-1/4 lg:w-1/6 block'>
+  <div className='md:w-1/4 lg:w-1/5 block'>
     <Drawer />
     <div
       id="navbar"
       className="
+      md:w-1/4
+      lg:w-1/5
       fixed
       z-50
       rounded-r-2xl
