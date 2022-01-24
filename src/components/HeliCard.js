@@ -10,7 +10,7 @@ const HeliCard = (props) => {
     const location = useLocation();
 
     return(
-    <div className='w-full h-full sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
+    <div className='w-full h-32 sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
         backgroundImage: `url(${props.helicopter.image})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
