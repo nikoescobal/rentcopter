@@ -2,9 +2,9 @@ import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { fetchHelicopters } from './redux/reducers/helicopters';
 import { fetchReservations } from './redux/reducers/reservations';
-import { useDispatch } from 'react-redux';
 import Helicopters from './pages/Helicopters';
 import Reservations from './pages/Reservations';
 import Homepage from './pages/Homepage';

@@ -1,4 +1,4 @@
-import { baseAPI } from "../../logic/api";
+import { baseAPI } from '../../logic/api';
 
 const LOAD_HELICOPTERS = 'App/helicopters/LOAD_HELICOPTERS';
 const LOAD_HELICOPTERS_SUCCESS = 'App/helicopters/LOAD_HELICOPTERS_SUCCESS';
@@ -19,15 +19,15 @@ export const loadHelicoptersSuccess = (payload) => ({
 
 export const fetchHelicopters = () => async (dispatch) => {
   dispatch(loadHelicopters());
-  const fetchedData = await fetch(baseAPI + 'api/v1/helicopters', {
+  const fetchedData = await fetch(`${baseAPI}api/v1/helicopters`, {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
-      'Authorization': sessionStorage.getItem('token')
+      Authorization: sessionStorage.getItem('token'),
     },
   });
   const result = await fetchedData.json();
   dispatch(loadHelicoptersSuccess(result));
-}
+};
 
 const helicoptersReducer = (state = initialState, action) => {
   switch (action.type) {

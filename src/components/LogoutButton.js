@@ -22,7 +22,7 @@ const LogoutButton = () => (
         "
       onClick={() => {
         sessionStorage.clear();
-        window.location="/login";
+        window.location = '/login';
       }}
     >
       LOGOUT

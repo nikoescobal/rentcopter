@@ -3,21 +3,21 @@ import { topDown } from '../animations';
 import { addHeli } from '../logic/api';
 
 const AddHelicopter = () => {
-  window.sessionStorage.getItem("token") == null ? window.location="/login" : null
-  window.sessionStorage.getItem("admin") !== "true" ? window.location="/" : null
+  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
+  window.sessionStorage.getItem('admin') !== 'true' ? window.location = '/' : null;
   useEffect(() => {
     topDown();
   }, []);
-  
+  const new_heli = document.getElementById('new_heli');
   const createHeli = () => {
-    addHeli(new_heli.name.value, 
-            new_heli.desc.value, 
-            new_heli.cost.value, 
-            new_heli.capacity.value, 
-            new_heli.range.value, 
-            new_heli.speed.value, 
-            new_heli.image.value);
-  }
+    addHeli(new_heli.name.value,
+      new_heli.desc.value,
+      new_heli.cost.value,
+      new_heli.capacity.value,
+      new_heli.range.value,
+      new_heli.speed.value,
+      new_heli.image.value);
+  };
 
   return (
     <div id="main" className="p-4 md:p-24 flex justify-center flex-col w-full md:w-3/4 lg:w-5/6 h-screen transition-all opacity-0 -translate-y-full origin-top ease-out duration-500">

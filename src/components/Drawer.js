@@ -15,7 +15,7 @@ export default function TemporaryDrawer() {
   const isAdmin = sessionStorage.getItem('admin');
   const normalMenu = ['Reservations', 'Add reservation'];
   const adminMenu = ['Reservations', 'Add reservation', 'Add helicopter', 'Remove Helicopter'];
-  const getMenu = () => isAdmin=='true' ? adminMenu : normalMenu;
+  const getMenu = () => (isAdmin === 'true' ? adminMenu : normalMenu);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

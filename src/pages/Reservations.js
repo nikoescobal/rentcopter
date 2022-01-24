@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import ReservationCard from '../components/ReservationCard';
 import { topDown } from '../animations';
 
 const Reservations = () => {
-  window.sessionStorage.getItem("token") == null ? window.location="/login" : null
+  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
   const reservations = useSelector((state) => state.reservations.reservations_arr);
   useEffect(() => {
     topDown();

@@ -32,15 +32,15 @@ export const loadReservationsSuccess = (payload) => ({
 
 export const fetchReservations = () => async (dispatch) => {
   dispatch(loadReservations());
-  const fetchedData = await fetch(baseAPI + 'api/v1/reservations', {
+  const fetchedData = await fetch(`${baseAPI}api/v1/reservations`, {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
-      'Authorization': sessionStorage.getItem('token')
+      Authorization: sessionStorage.getItem('token'),
     },
   });
   const result = await fetchedData.json();
   dispatch(loadReservationsSuccess(result));
-}
+};
 
 const reservationsReducer = (state = initialState, action) => {
   switch (action.type) {
