@@ -6,6 +6,7 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
 import Logo from './Logo';
+import { v4 as uuidv4 } from 'uuid';
 import NavImages from './NavImages';
 
 export default function TemporaryDrawer() {
@@ -36,10 +37,10 @@ export default function TemporaryDrawer() {
     >
       <List className="h-full flex flex-col justify-center">
         {getMenu().map((text) => (
-          <div key={text} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-yellow-400 hover:shadow-inner flex justify-evenly duration-500">
-            <NavImages key={text} text={text} />
+          <div key={uuidv4()} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-yellow-400 hover:shadow-inner flex justify-evenly duration-500">
+            <NavImages key={uuidv4()} text={text} />
             <NavLink
-              key={text}
+              key={uuidv4()}
               className="menu-items text-xl mb-2 transition-all p-5 w-3/4 "
               to={`/${text.toLowerCase().replace(' ', '-')}`}
             >

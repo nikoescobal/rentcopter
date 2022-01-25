@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
 import { reserve } from '../logic/api';
+import { useNavigate } from 'react-router-dom';
 
 const HeliForm = (props) => {
   const {
@@ -39,6 +40,7 @@ const HeliForm = (props) => {
     }
     return 'text-center text-red-400 mb-5';
   };
+  const navigate = useNavigate();
 
   return (
     <form className="flex flex-col" id="reserve_form">
@@ -80,9 +82,9 @@ const HeliForm = (props) => {
         className="heli-form-button"
         onClick={(e) => {
           e.preventDefault;
-          console.log(props.helicopter);
           const reserve_form = document.getElementById('reserve_form');
           reserve(reserve_form.start_date.value, reserve_form.end_date.value, props.helicopter);
+          navigate("../reservations", { replace: true });
         }}
       >
         RESERVE

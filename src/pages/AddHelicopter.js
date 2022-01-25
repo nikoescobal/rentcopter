@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { topDown } from '../animations';
 import { addHeli } from '../logic/api';
+import { fetchHelicopters } from '../redux/reducers/helicopters';
 
 const AddHelicopter = () => {
+  const dispatch = useDispatch();
   window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
   window.sessionStorage.getItem('admin') !== 'true' ? window.location = '/' : null;
   useEffect(() => {
     topDown();
   }, []);
-  const new_heli = document.getElementById('new_heli');
   const createHeli = () => {
     addHeli(new_heli.name.value,
       new_heli.desc.value,
@@ -80,7 +82,7 @@ const AddHelicopter = () => {
           </div>
 
           <button
-            type="button"
+            type="submit"
             className="w-full
         px-6
         py-2.5
@@ -98,9 +100,9 @@ const AddHelicopter = () => {
         duration-150
         ease-in-out
         cursor-pointer"
-            onClick={createHeli}
+            onClick={(e) => {e.preventDefault();createHeli(); dispatch(fetchHelicopters())}}
           >
-            Register
+            Add Helicopter
           </button>
         </form>
       </div>
