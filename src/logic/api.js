@@ -88,11 +88,7 @@ export const addHeli = async (name, desc, cost, capacity, range, speed, image) =
       }),
     },
   ).then((response) => {
-    if (response.status === 201) {
-      popup('Helicopter added succesfully', 'green');
-    } else {
-      popup("Couldn't add helicopter", 'red');
-    }
+    response.status === 201 ? popup('Helicopter added succesfully', 'green') : popup('Error while adding helicopter', 'red');
   });
 };
 
@@ -107,10 +103,22 @@ export const delete_heli = async (id) => {
       },
     },
   ).then((response) => {
-    if (response.status === 204) {
-      popup('Helicopter removed succesfully', 'green');
-    } else {
-      popup('Error while removing helicopter', 'red');
-    }
+    response.status === 204 ? popup('Helicopter removed succesfully', 'green') : popup('Error while removing helicopter', 'red');
   });
+};
+
+export const delete_reservation = async (id) => {
+  await fetch(
+    `${baseAPI}api/v1/reservations/${id}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        Authorization: sessionStorage.getItem('token'),
+      },
+    },
+  ).then((response) => {
+    response.status === 204 ? popup('Reservation removed succesfully', 'green') : popup('Error while removing reservation', 'red');
+    }
+  );
 };

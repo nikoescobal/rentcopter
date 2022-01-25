@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { delete_heli } from '../logic/api';
-import { fetchHelicopters } from '../redux/reducers/helicopters';
+import { fetchHelicopters, loadHelicopters } from '../redux/reducers/helicopters';
 /* eslint-disable */
 const LowerCardDelete = (props) => {
   const dispatch = useDispatch();
@@ -20,8 +20,9 @@ const LowerCardDelete = (props) => {
                 hover:bg-red-800
                 transition-all
                 text-white"
-                onClick={() => {
-                  delete_heli(props.helicopter.id);
+                onClick={async() => {
+                  dispatch(loadHelicopters())
+                  await(delete_heli(props.helicopter.id));
                   dispatch(fetchHelicopters());
                 }}
     >

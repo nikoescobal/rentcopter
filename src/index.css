@@ -35,6 +35,10 @@ body {
   color: white !important;
 }
 
+.MuiDialog-paperWidthSm {
+  min-width: 400px;
+}
+
 .MuiDialogTitle-root {
   text-align: center;
 }
