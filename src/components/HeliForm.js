@@ -3,18 +3,19 @@ import { PropTypes } from 'prop-types';
 import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
 import { reserve } from '../logic/api';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { PostReservation } from '../redux/reducers/reservations';
 
 const HeliForm = (props) => {
-  const {
-    helicopter: {
-      rental_cost: price,
-    },
-  } = props;
+  const { helicopter } = props;
+  const { rental_cost: price } = helicopter;
 
   const initialForm = {
     'start-date': TODAY,
     'end-date': TODAY,
   };
+
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState(initialForm);
 
@@ -24,6 +25,12 @@ const HeliForm = (props) => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleReserve = (e) => {
+    e.preventDefault();
+    dispatch(PostReservation(form['start-date'], form['end-date'], helicopter));
+    navigate("../reservations", { replace: true });
+  }
 
   const amount = dateDifference(form['start-date'], form['end-date'], price);
 
@@ -80,12 +87,7 @@ const HeliForm = (props) => {
       <button
         type="button"
         className="heli-form-button"
-        onClick={(e) => {
-          e.preventDefault;
-          const reserve_form = document.getElementById('reserve_form');
-          reserve(reserve_form.start_date.value, reserve_form.end_date.value, props.helicopter);
-          navigate("../reservations", { replace: true });
-        }}
+        onClick={handleReserve}
       >
         RESERVE
       </button>
