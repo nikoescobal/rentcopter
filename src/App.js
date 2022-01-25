@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router, Routes, Route,
+  HashRouter as Router, Routes, Route,
 } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,12 +26,12 @@ const App = () => {
   }, [dispatch]);
   const loading1 = useSelector((state) => state.helicopters.loading);
   const loading2 = useSelector((state) => state.reservations.loading);
-  const { pathname } = window.location;
+  const { hash } = window.location;
+  console.log(window.location);
   return (
-    <>
       <Router>
-        {pathname !== '/login' && pathname !== '/register' && pathname !== '/login/' && pathname !== '/register/' ? loading1 || loading2 ? <Spinner /> : null :null}
-        {pathname !== '/login' && pathname !== '/register' && pathname !== '/login/' && pathname !== '/register/' ? <Navbar /> : null }
+        {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? loading1 || loading2 ? <Spinner /> : null :null}
+        {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? <Navbar /> : null }
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
@@ -43,7 +43,6 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
-    </>
   );
 };
 

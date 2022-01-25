@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { topDown } from '../animations';
 import { addHeli } from '../logic/api';
 import { fetchHelicopters, loadHelicopters } from '../redux/reducers/helicopters';
 
 const AddHelicopter = () => {
   const dispatch = useDispatch();
-  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
-  window.sessionStorage.getItem('admin') !== 'true' ? window.location = '/' : null;
+  const navigate = useNavigate()
   useEffect(() => {
+    window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
+    window.sessionStorage.getItem('admin') !== 'true' ? navigate('/') : null;
     topDown();
   }, []);
   const createHeli = () => {

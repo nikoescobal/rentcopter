@@ -2,12 +2,14 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import HeliCard from '../components/HeliCard';
 import { topDown } from '../animations';
+import { useNavigate } from 'react-router-dom';
 
 const RemoveHelicopter = () => {
-  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
-  window.sessionStorage.getItem('admin') !== 'true' ? window.location = '/' : null;
+  const navigate = useNavigate();
   const helicopters = useSelector((state) => state.helicopters.helicopters_arr);
   useEffect(() => {
+    window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
+    window.sessionStorage.getItem('admin') !== 'true' ? navigate('/') : null;
     topDown();
   }, []);
   return (

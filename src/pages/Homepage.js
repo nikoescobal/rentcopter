@@ -1,19 +1,28 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { homepageAnims, topDown, downTop } from '../animations';
+import guy from '../assets/guy.mp4';
+import { fetchHelicopters } from '../redux/reducers/helicopters';
+import { fetchReservations } from '../redux/reducers/reservations';
 
 const Homepage = () => {
   const navigate = useNavigate();
-  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
+  const dispatch = useDispatch();
   useEffect(() => {
+    window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     topDown();
     homepageAnims();
+    if ( sessionStorage.getItem('token') !== null ) {
+      dispatch(fetchHelicopters());
+      dispatch(fetchReservations());
+    }
   }, []);
   const userinfo = sessionStorage.getItem('name');
   return (
     <div id="main" className=" overflow-hidden flex justify-center flex-col w-full md:w-3/4 lg:w-5/6 h-screen transition-all opacity-0 -translate-y-full origin-top ease-out duration-500">
       <video autoPlay muted loop id="helis" className="video opacity-20 hidden md:block">
-        <source src="https://i.imgur.com/5JiqJ1Q.mp4" type="video/mp4" />
+        <source src={guy} type="video/mp4" />
       </video>
       <h1 id="title1" className="raleway cool-title transition-all duration-1000 !text-4xl md:!text-6xl ml-10 relative mt-40 bottom-48 translate-x-full translate-y">
         Welcome,

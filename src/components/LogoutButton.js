@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const LogoutButton = () => (
+const LogoutButton = () => {
+  const navigate = useNavigate();
+return (
   <div className="
     absolute
     bottom-4
@@ -22,7 +25,7 @@ const LogoutButton = () => (
         "
       onClick={() => {
         sessionStorage.clear();
-        window.location = '/login';
+        navigate('/login');
       }}
     >
       LOGOUT
@@ -38,7 +41,7 @@ const LogoutButton = () => (
       </svg>
     </button>
   </div>
-
 );
+}
 
 export default LogoutButton;

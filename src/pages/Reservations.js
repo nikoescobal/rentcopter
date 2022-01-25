@@ -3,11 +3,13 @@ import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import ReservationCard from '../components/ReservationCard';
 import { topDown } from '../animations';
+import { useNavigate } from 'react-router-dom';
 
 const Reservations = () => {
-  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
+  const navigate = useNavigate();
   const reservations = useSelector((state) => state.reservations.reservations_arr);
   useEffect(() => {
+    window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     topDown();
   }, []);
   return (

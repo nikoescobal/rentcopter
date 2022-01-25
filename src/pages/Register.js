@@ -11,7 +11,7 @@ const Register = () => {
   useEffect(() => {
     topDown();
   }, []);
-  sessionStorage.getItem('token') !== null ? window.location = '/' : null;
+  sessionStorage.getItem('token') !== null ? navigate('/') : null;
   return (
     <div className="h-screen w-screen">
       <div id="main" className="opacity-0 -translate-y-full block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-32 transition-all duration-1000">

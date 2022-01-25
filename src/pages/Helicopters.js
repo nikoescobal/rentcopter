@@ -2,11 +2,13 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import HeliModal from '../components/HeliModal';
 import { topDown } from '../animations';
+import { useNavigate } from 'react-router-dom';
 
 const Helicopters = () => {
-  window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
+  const navigate = useNavigate();
   const helicopters = useSelector((state) => state.helicopters.helicopters_arr);
   useEffect(() => {
+    window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     topDown();
   }, []);
   return (

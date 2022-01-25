@@ -34,7 +34,7 @@ export const login = async (mail, password) => {
       for (const [key, value] of Object.entries(userInfo)) {
         sessionStorage.setItem(key, value);
       }
-      window.location = '/';
+      window.location = '#/';
     }
   });
 };
@@ -59,7 +59,7 @@ export const register = async (name, mail, password) => {
     if (response.status === 200) {
       popup('Registered succesfully! Please log in.', 'green');
       downTop();
-      window.location = '/login';
+      window.location = '#/login';
     } else {
       popup("Couldn't register new account", 'red');
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { downTop } from '../animations';
+import logo from '../assets/logo.png';
 
 const Logo = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Logo = () => {
         to="/"
         onClick={(e) => {
           e.preventDefault();
-          if (window.location.pathname !== '/') {
+          if (window.location.hash !== '#/') {
             downTop();
             setTimeout(() => {
               navigate('/');
@@ -27,7 +28,7 @@ const Logo = () => {
         }}
       >
         <img
-          src="https://i.imgur.com/MKWxT1E.png"
+          src={logo}
           alt="logo"
           className="
             w-3/4
