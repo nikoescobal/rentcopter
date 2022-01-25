@@ -9,8 +9,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import HeliForm from './HeliForm';
-import { useDispatch } from 'react-redux';
-import { fetchReservations } from '../redux/reducers/reservations';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -51,7 +49,6 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs(props) {
-  const dispatch = useDispatch();
   
   const [open, setOpen] = React.useState(false);
 
@@ -60,7 +57,6 @@ export default function CustomizedDialogs(props) {
   };
   const handleClose = () => {
     setOpen(false);
-    dispatch(fetchReservations())
   };
 
   return (

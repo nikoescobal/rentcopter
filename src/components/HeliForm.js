@@ -43,17 +43,17 @@ const HeliForm = (props) => {
 
   const classVerifier = (amount) => {
     if (amount > 0) {
-      return 'text-center text-green-400 mb-5';
+      return 'text-center text-green-400 mb-5 font-bold';
     }
-    return 'text-center text-red-400 mb-5';
+    return 'text-center text-red-400 mb-5 font-bold';
   };
   const navigate = useNavigate();
 
   return (
     <form className="flex flex-col" id="reserve_form">
-      <div className="flex space-evenly mb-10">
-        <label htmlFor="date-start" className="text-center">
-          <span>Reservation start-date:</span>
+      <div className="flex justify-evenly mb-10 w-full">
+        <label htmlFor="date-start" className="text-center flex flex-col">
+          <span className='mb-4'>Reservation start-date:</span>
           <input
             type="date"
             id="start_date"
@@ -66,8 +66,8 @@ const HeliForm = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="date-end" className="text-center">
-          <span>Reservation end-date:</span>
+        <label htmlFor="date-end" className="text-center flex flex-col">
+          <span className='mb-4'>Reservation end-date:</span>
           <input
             type="date"
             id="end_date"
@@ -86,7 +86,7 @@ const HeliForm = (props) => {
       </span>
       <button
         type="button"
-        className="heli-form-button"
+        className="heli-form-button rounded-full"
         onClick={handleReserve}
       >
         RESERVE

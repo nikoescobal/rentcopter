@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { topDown } from '../animations';
 import { addHeli } from '../logic/api';
-import { fetchHelicopters } from '../redux/reducers/helicopters';
+import { fetchHelicopters, loadHelicopters } from '../redux/reducers/helicopters';
 
 const AddHelicopter = () => {
   const dispatch = useDispatch();
@@ -100,7 +100,10 @@ const AddHelicopter = () => {
         duration-150
         ease-in-out
         cursor-pointer"
-            onClick={(e) => {e.preventDefault();createHeli(); dispatch(fetchHelicopters())}}
+            onClick={async(e) => {e.preventDefault();
+              dispatch(loadHelicopters())
+              await(createHeli()); 
+              dispatch(fetchHelicopters())}}
           >
             Add Helicopter
           </button>
