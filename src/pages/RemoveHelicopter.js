@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import HeliCard from '../components/HeliCard';
 import { topDown } from '../animations';
 
-const RemoveHelicpoter = () => {
+const RemoveHelicopter = () => {
   window.sessionStorage.getItem('token') == null ? window.location = '/login' : null;
   window.sessionStorage.getItem('admin') !== 'true' ? window.location = '/' : null;
   const helicopters = useSelector((state) => state.helicopters.helicopters_arr);
@@ -23,4 +23,4 @@ const RemoveHelicpoter = () => {
   );
 };
 
-export default RemoveHelicpoter;
+export default RemoveHelicopter;

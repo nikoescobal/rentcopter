@@ -22,11 +22,13 @@ export const login = async (mail, password) => {
     if (response.status !== 200) {
       popup('Invalid credentials', 'red');
     }
-    sessionStorage.clear();
-    downTop();
-    const authheader = response.headers.get('Authorization');
-    sessionStorage.setItem('token', authheader);
-    return response.json();
+    else {
+      sessionStorage.clear();
+      downTop();
+      const authheader = response.headers.get('Authorization');
+      sessionStorage.setItem('token', authheader);
+      return response.json();
+    }
   }).then((userInfo) => {
     if (userInfo) {
       for (const [key, value] of Object.entries(userInfo)) {
