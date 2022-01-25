@@ -18,8 +18,10 @@ import Register from './pages/Register';
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchHelicopters());
-    dispatch(fetchReservations());
+    if ( sessionStorage.getItem('token') !== null ) {
+      dispatch(fetchHelicopters());
+      dispatch(fetchReservations());
+    }
   }, [dispatch]);
   const { pathname } = window.location;
   return (

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { downTop } from '../animations';
 import { topDown } from '../animations';
 import { login } from '../logic/api';
 
 const LogIn = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     topDown();
   }, []);
@@ -55,7 +57,10 @@ const LogIn = () => {
           </button>
           <p className="text-gray-800 mt-6 text-center">
             Not a member?
-            <NavLink to="/register/" className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out"> Register</NavLink>
+            <button type="button" onClick={()=> {downTop();
+                  setTimeout(() => {
+                    navigate('/register')
+                  }, 700);}} className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out"> Register</button>
             <br />
           </p>
         </form>
