@@ -9,6 +9,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import HeliForm from './HeliForm';
+import { useDispatch } from 'react-redux';
+import { fetchReservations } from '../redux/reducers/reservations';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -57,6 +59,7 @@ export default function CustomizedDialogs(props) {
   const handleClose = () => {
     setOpen(false);
   };
+  const dispatch = useDispatch();
 
   return (
     <div className="h-full flex justify-center">
@@ -75,7 +78,7 @@ export default function CustomizedDialogs(props) {
         !hover:bg-indigo-700
         !transition-all
         !text-white"
-        onClick={handleClickOpen}>
+        onClick={() => {handleClickOpen();dispatch(fetchReservations())}}>
         RESERVE
       </Button>
       <BootstrapDialog

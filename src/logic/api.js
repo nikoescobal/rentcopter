@@ -135,7 +135,7 @@ export const delete_heli = async (id) => {
     if (response.status === 204) {
       popup('Helicopter removed succesfully', 'green');
     } else {
-      popup('Error while creating helicopter', 'red');
+      popup('Error while removing helicopter', 'red');
     }
   });
 };

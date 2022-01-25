@@ -1,7 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { delete_heli } from '../logic/api';
+import { fetchHelicopters } from '../redux/reducers/helicopters';
 /* eslint-disable */
-const LowerCardDelete = (props) => (
+const LowerCardDelete = (props) => {
+  const dispatch = useDispatch();
+  return (
   <div className=" bg-gray-900 w-full h-1/4 flex flex-row-reverse justify-center bg-opacity-50">
     <button type="button" className="
                 h-2/3
@@ -18,6 +22,7 @@ const LowerCardDelete = (props) => (
                 text-white"
                 onClick={() => {
                   delete_heli(props.helicopter.id);
+                  dispatch(fetchHelicopters());
                 }}
     >
       DELETE
@@ -25,5 +30,6 @@ const LowerCardDelete = (props) => (
 
   </div>
 );
+}
 
 export default LowerCardDelete;
