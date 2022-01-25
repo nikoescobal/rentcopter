@@ -51,6 +51,8 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs(props) {
+  const dispatch = useDispatch();
+  
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -58,8 +60,8 @@ export default function CustomizedDialogs(props) {
   };
   const handleClose = () => {
     setOpen(false);
+    dispatch(fetchReservations())
   };
-  const dispatch = useDispatch();
 
   return (
     <div className="h-full flex justify-center">
@@ -78,7 +80,7 @@ export default function CustomizedDialogs(props) {
         !hover:bg-indigo-700
         !transition-all
         !text-white"
-        onClick={() => {handleClickOpen();dispatch(fetchReservations())}}>
+        onClick={handleClickOpen}>
         RESERVE
       </Button>
       <BootstrapDialog

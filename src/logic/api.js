@@ -39,33 +39,6 @@ export const login = async (mail, password) => {
   });
 };
 
-export const reserve = async (start, end, helicopter) => {
-  await fetch(
-    `${baseAPI}api/v1/reservations`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-        Authorization: sessionStorage.getItem('token'),
-      },
-      body: JSON.stringify({
-        reservation:
-          {
-            helicopter_id: helicopter.id,
-            date_start: start,
-            date_end: end,
-          },
-      }),
-    },
-  ).then((response) => {
-    if (response.status === 201) {
-      popup('Reservation created', 'green');
-    } else {
-      popup("Couldn't create reservation", 'red');
-    }
-  });
-};
-
 export const register = async (name, mail, password) => {
   await fetch(
     `${baseAPI}signup`,
