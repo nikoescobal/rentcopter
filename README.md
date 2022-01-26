@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rentcopter Front-end
+> This is the frontend of the Rentcopter Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create a reservation to book a specific helicopter and view them within the reservations page. The backend can be found [here](https://github.com/nikoescobal/rentcopter/tree/dev-back-end)
 
-## Available Scripts
+## Screenshots
+- insert here
 
-In the project directory, you can run:
+## Live Demo
+- insert here
 
-### `npm start`
+## Built with
+- HTML
+- CSS
+- Tailwind CSS
+- Javascript
+- React
+- Redux
+- Lots of love :heart:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+**To get this project set up on your local machine, follow these steps:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Run `git clone https://github.com/nikoescobal/rentcopter.git`
+4. Run `cd dev-backend`
+5. Run `bundle install`
+6. Run `rails db:reset`
+7. Run `rails server` or `rails s`
+8. Open http://localhost:3000/ within your browser
 
-### `npm run build`
+**To run the tests, follow these steps:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Ensure you are in the project root directory
+2. Ensure you ran `bundle install`
+3. run `rspec`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**To get this project set up on your local machine, follow these steps:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Run  `git clone https://github.com/nikoescobal/rentcopter/tree/dev-front-end`
+4. Run  `cd dev-frontend`
+5. Run `npm install` or `npm i`
+6. Run `yarn start` or `npm start`
+7. Open http://localhost:3000/ within your browser
 
-### `npm run eject`
+**To run the tests, follow these steps:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Ensure you are in the project root directory
+2. Ensure you ran `npm install`
+3. run `npm run test`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Authors:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+👤 **Robert Baiesita**
 
-## Learn More
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/reshyresh)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/reshyresh/)
+ <a href="mailto:reshy@protonmail.com?subject=Sup Reshy?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Rubén Pire**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/rpire)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/RubenPire7)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/ruben-d-pire/)
+ <a href="mailto:rubenpire7@gmail.com?subject=Sup Rubén?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
+ 
+ 👤 **Titus Muthomi**
 
-### Code Splitting
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Kalunge)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/titus_muthomi)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/muthomi-titus-295024181/)
+ <a href="mailto:muthomititus@gmail.com?subject=Sup Titus?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
+  
+ 👤 **Nikolas Escobal**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/nikoescobal)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/nikoescobal)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/nikolas-escobal/)
+ <a href="mailto:niko.escobal@gmail.com?subject=Sup Niko?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions, issues and feature requests are welcome!
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](https://github.com/nikoescobal/rentcopter/issues).
+## Show your support
 
-### Advanced Configuration
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgments
 
-### Deployment
+- Microverse
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 MIT License
 
-### `npm run build` fails to minify
+This project makes use of the MIT license.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
