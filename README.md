@@ -7,7 +7,7 @@
 - insert here
 
 ## Live Demo
-- insert here
+Click [here](https://mystifying-raman-4e294e.netlify.app/) to view the project.
 
 ## Built with
 - HTML
