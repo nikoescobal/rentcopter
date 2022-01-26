@@ -7,7 +7,7 @@ import { login } from '../logic/api';
 const LogIn = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    spinnerbg.classList.add('hidden')
+    document.getElementById('spinnerbg') ? spinnerbg.classList.add('hidden') : null
     topDown();
   }, []);
   sessionStorage.getItem('token') !== null ? navigate('/') : null;

@@ -16,7 +16,6 @@ const Navbar = () => {
   const normalMenu = ['Reservations', 'Add reservation'];
   const adminMenu = ['Reservations', 'Add reservation', 'Add helicopter', 'Remove Helicopter'];
   const getMenu = () => isAdmin=='true' ? adminMenu : normalMenu;
-  console.log(hash);
   return (
   <div className={`md:w-1/4 lg:w-1/5 block ${hash === "#/login" || hash === "#/register" ? "hidden" : null}`}>
     <Drawer />

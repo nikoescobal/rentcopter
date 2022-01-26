@@ -27,7 +27,6 @@ const App = () => {
   const loading1 = useSelector((state) => state.helicopters.loading);
   const loading2 = useSelector((state) => state.reservations.loading);
   const { hash } = window.location;
-  console.log(window.location);
   return (
       <Router>
         {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? loading1 || loading2 ? <Spinner /> : null :null}
