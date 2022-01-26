@@ -7,7 +7,7 @@ import { fetchHelicopters, loadHelicopters } from '../redux/reducers/helicopters
 
 const AddHelicopter = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     window.sessionStorage.getItem('admin') !== 'true' ? navigate('/') : null;
@@ -102,10 +102,12 @@ const AddHelicopter = () => {
         duration-150
         ease-in-out
         cursor-pointer"
-            onClick={async(e) => {e.preventDefault();
-              dispatch(loadHelicopters())
-              await(createHeli()); 
-              dispatch(fetchHelicopters())}}
+            onClick={async (e) => {
+              e.preventDefault();
+              dispatch(loadHelicopters());
+              await (createHeli());
+              dispatch(fetchHelicopters());
+            }}
           >
             Add Helicopter
           </button>

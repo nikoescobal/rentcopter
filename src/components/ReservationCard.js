@@ -1,7 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { fetchReservations, loadReservations } from '../redux/reducers/reservations';
 import { delete_reservation } from '../logic/api';
-import { useDispatch } from 'react-redux';
 
 /* eslint-disable */
 

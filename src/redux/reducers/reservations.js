@@ -48,7 +48,7 @@ export const PostReservation = (start, end, helicopter) => async (dispatch) => {
       method: 'POST',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
-        'Authorization': sessionStorage.getItem('token'),
+        Authorization: sessionStorage.getItem('token'),
       },
       body: JSON.stringify({
         reservation:
@@ -58,8 +58,7 @@ export const PostReservation = (start, end, helicopter) => async (dispatch) => {
             date_end: end,
           },
       }),
-    },
-  ).then((response) => {
+    }).then((response) => {
     if (response.status === 201) {
       popup('Reservation created', 'green');
     } else {
@@ -85,7 +84,7 @@ const reservationsReducer = (state = initialState, action) => {
       return {
         reservations_arr: [...state.reservations_arr, action.payload],
         loading: false,
-      }
+      };
     default:
       return state;
   }

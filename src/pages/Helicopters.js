@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import HeliModal from '../components/HeliModal';
 import { topDown } from '../animations';
-import { useNavigate } from 'react-router-dom';
 
 const Helicopters = () => {
   const navigate = useNavigate();

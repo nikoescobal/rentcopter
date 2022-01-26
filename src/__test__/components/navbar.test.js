@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/Navbar';
 
 it('Navbar component renders correctly', () => {
   const tree = renderer

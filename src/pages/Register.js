@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { register } from '../logic/api';
 import { topDown, downTop } from '../animations';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { popup } from '../logic/popup';
 
 const Register = () => {
-  let regexEmail = /^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/;
+  const regexEmail = /^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/;
   const navigate = useNavigate();
   useEffect(() => {
     topDown();
@@ -65,23 +64,29 @@ const Register = () => {
             onClick={(e) => {
               e.preventDefault;
               const form = document.getElementById('form');
-              if(form.password.value == form.confirmPassword.value && form.email.value.match(regexEmail)) {
+              if (form.password.value === form.confirmPassword.value && form.email.value.match(regexEmail)) {
                 register(form.name.value, form.email.value, form.password.value);
+              } else {
+                popup('Invalid input!', 'red');
               }
-              else {
-                popup('Invalid input!','red');
-              }
-              
             }}
           >
             Register
           </button>
           <p className="text-gray-800 mt-6 text-center">
             Already a member?
-            <button type="button" onClick={()=> {downTop();
-                  setTimeout(() => {
-                    navigate('/login')
-                  }, 700);}} className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out">Log In</button>
+            <button
+              type="button"
+              onClick={() => {
+                downTop();
+                setTimeout(() => {
+                  navigate('/login');
+                }, 700);
+              }}
+              className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out"
+            >
+              Log In
+            </button>
             <br />
           </p>
         </form>

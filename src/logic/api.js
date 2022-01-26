@@ -21,8 +21,7 @@ export const login = async (mail, password) => {
   ).then((response) => {
     if (response.status !== 200) {
       popup('Invalid credentials', 'red');
-    }
-    else {
+    } else {
       sessionStorage.clear();
       downTop();
       const authheader = response.headers.get('Authorization');
@@ -119,6 +118,5 @@ export const delete_reservation = async (id) => {
     },
   ).then((response) => {
     response.status === 204 ? popup('Reservation removed succesfully', 'green') : popup('Error while removing reservation', 'red');
-    }
-  );
+  });
 };

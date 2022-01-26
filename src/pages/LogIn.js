@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { downTop } from '../animations';
-import { topDown } from '../animations';
+import { downTop, topDown } from '../animations';
 import { login } from '../logic/api';
 
 const LogIn = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    document.getElementById('spinnerbg') ? spinnerbg.classList.add('hidden') : null
+    document.getElementById('spinnerbg') ? spinnerbg.classList.add('hidden') : null;
     topDown();
   }, []);
   sessionStorage.getItem('token') !== null ? navigate('/') : null;
@@ -58,10 +57,19 @@ const LogIn = () => {
           </button>
           <p className="text-gray-800 mt-6 text-center">
             Not a member?
-            <button type="button" onClick={()=> {downTop();
-                  setTimeout(() => {
-                    navigate('/register')
-                  }, 700);}} className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out"> Register</button>
+            <button
+              type="button"
+              onClick={() => {
+                downTop();
+                setTimeout(() => {
+                  navigate('/register');
+                }, 700);
+              }}
+              className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out"
+            >
+              {' '}
+              Register
+            </button>
             <br />
           </p>
         </form>

@@ -19,7 +19,7 @@ import Spinner from './components/Spinner';
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    if ( sessionStorage.getItem('token') !== null ) {
+    if (sessionStorage.getItem('token') !== null) {
       dispatch(fetchHelicopters());
       dispatch(fetchReservations());
     }
@@ -28,20 +28,20 @@ const App = () => {
   const loading2 = useSelector((state) => state.reservations.loading);
   const { hash } = window.location;
   return (
-      <Router>
-        {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? loading1 || loading2 ? <Spinner /> : null :null}
-        {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? <Navbar /> : null }
-        <Routes>
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Homepage />} />
-          <Route path="/reservations" element={<Reservations />} />
-          <Route path="/add-reservation" element={<Helicopters />} />
-          <Route path="/add-helicopter" element={<AddHelicopter />} />
-          <Route path="/remove-helicopter" element={<RemoveHelicopter />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
+    <Router>
+      {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? loading1 || loading2 ? <Spinner /> : null : null}
+      {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? <Navbar /> : null }
+      <Routes>
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/add-reservation" element={<Helicopters />} />
+        <Route path="/add-helicopter" element={<AddHelicopter />} />
+        <Route path="/remove-helicopter" element={<RemoveHelicopter />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 };
 

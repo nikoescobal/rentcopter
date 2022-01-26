@@ -13,7 +13,7 @@ const Homepage = () => {
     window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     topDown();
     homepageAnims();
-    if ( sessionStorage.getItem('token') !== null ) {
+    if (sessionStorage.getItem('token') !== null) {
       dispatch(fetchHelicopters());
       dispatch(fetchReservations());
     }

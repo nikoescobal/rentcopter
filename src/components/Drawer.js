@@ -4,9 +4,9 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import LogoutButton from './LogoutButton';
 import Logo from './Logo';
-import { v4 as uuidv4 } from 'uuid';
 import NavImages from './NavImages';
 
 export default function TemporaryDrawer() {

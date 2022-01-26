@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
-import { reserve } from '../logic/api';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
 import { PostReservation } from '../redux/reducers/reservations';
 
 const HeliForm = (props) => {
@@ -25,12 +24,12 @@ const HeliForm = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-
+  const navigate = useNavigate();
   const handleReserve = (e) => {
     e.preventDefault();
     dispatch(PostReservation(form['start-date'], form['end-date'], helicopter));
-    navigate("../reservations", { replace: true });
-  }
+    navigate('../reservations', { replace: true });
+  };
 
   const amount = dateDifference(form['start-date'], form['end-date'], price);
 
@@ -47,13 +46,12 @@ const HeliForm = (props) => {
     }
     return 'text-center text-red-400 mb-5 font-bold';
   };
-  const navigate = useNavigate();
 
   return (
     <form className="flex flex-col" id="reserve_form">
       <div className="flex justify-evenly mb-10 w-full">
         <label htmlFor="date-start" className="text-center flex flex-col">
-          <span className='mb-4'>Reservation start-date:</span>
+          <span className="mb-4">Reservation start-date:</span>
           <input
             type="date"
             id="start_date"
@@ -67,7 +65,7 @@ const HeliForm = (props) => {
           />
         </label>
         <label htmlFor="date-end" className="text-center flex flex-col">
-          <span className='mb-4'>Reservation end-date:</span>
+          <span className="mb-4">Reservation end-date:</span>
           <input
             type="date"
             id="end_date"
