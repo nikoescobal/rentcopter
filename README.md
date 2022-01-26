@@ -4,7 +4,9 @@
 > This is the frontend of the Rentcopter Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create a reservation to book a specific helicopter and view them within the reservations page. The backend can be found [here](https://github.com/nikoescobal/rentcopter/tree/dev-back-end)
 
 ## Screenshots
-- insert here
+
+![Rentcopter](https://user-images.githubusercontent.com/85108160/151171771-f78d6057-ae20-4323-aa40-be4e0a51d498.jpg)
+
 
 ## Live Demo
 Click [here](https://mystifying-raman-4e294e.netlify.app/) to view the project.
