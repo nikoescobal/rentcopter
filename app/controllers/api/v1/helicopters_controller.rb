@@ -3,7 +3,6 @@ class Api::V1::HelicoptersController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-
   # GET /helicopters
   def index
     @helicopters = Helicopter.all
