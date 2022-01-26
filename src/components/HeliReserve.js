@@ -49,6 +49,7 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs(props) {
+  
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -59,14 +60,14 @@ export default function CustomizedDialogs(props) {
   };
 
   return (
-    <div>
+    <div className="h-full flex justify-center">
       <Button
         className="
-        !h-2/3
+        !h-1/2
         !sm:h-1/2 
-        !mt-2 
+        !my-auto 
+        !mr-3
         !rounded-full 
-        !mr-5
         !text-sm
         !bg-opacity-75
         !w-24
@@ -86,7 +87,7 @@ export default function CustomizedDialogs(props) {
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
           Reserve Helicopter
         </BootstrapDialogTitle>
-          <HeliForm price={props.price} />
+          <HeliForm helicopter={props.helicopter} />
       </BootstrapDialog>
     </div>
   );

@@ -1,13 +1,6 @@
 /* eslint-disable */
-const plugin = require('tailwindcss/plugin');
-
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./*.html', './*.js', './**/*.js', './**/*.html', './**/**/*.html', './**/**/*.js'],
-  },
-  content: ['./src/**/*.{html,js}'],
-  darkMode: false,
+  content: ['./src/*.html', './src/*.js', './src/**/*.js', './src/**/*.html', './src/**/**/*.html', './src/**/**/*.js'],
   theme: {},
   variants: {
     extend: {},

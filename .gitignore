@@ -15,6 +15,11 @@
 
 # production
 /build
+Gemfile
+app/
+config/
+log/
+tmp/
 
 # misc
 .DS_Store

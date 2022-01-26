@@ -1,13 +1,17 @@
 import React from 'react';
 import { CardActionArea } from '@mui/material';
-import HeliReserve from './HeliReserve';
-import Money from './Money';
+import { useLocation } from 'react-router-dom';
+import LowerCardDelete from './LowerCardDelete';
+import LowerCardReserve from './LowerCardReserve';
 
 /* eslint-disable */
 
-const HeliCard = (props) => (
-    <div className='w-full h-full sm:w-2/3 md:w-full !mx-auto md:h-60 rounded-2xl flex' style={{
-        backgroundImage: `url(${props.helicopter.img})`, 
+const HeliCard = (props) => {
+    const location = useLocation();
+
+    return(
+    <div className='w-full h-32 sm:w-2/3 md:w-full mx-auto md:h-60 rounded-2xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
+        backgroundImage: `url(${props.helicopter.image})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         borderRadius: 10,
@@ -26,17 +30,9 @@ const HeliCard = (props) => (
             <div className="h-10 w-full bg-gray-900 bg-opacity-75 rounded-t-md">
                 <h1 className="cool-title ml-4 my-auto text-left h-full">{props.helicopter.name}</h1>
             </div>  
-        </CardActionArea>
-        <div className=" bg-gray-900 w-full h-1/4 flex flex-row-reverse justify-between bg-opacity-50">
-                <HeliReserve price={props.helicopter.price_per_day} />
-                <div className="ml-3 my-auto flex">
-                    <Money />
-                    <p className="ml-2 text-xs text-white " style={{fontFamily: 'Montserrat'}}>Price per day:<br/><span className="text-md font-bold">{props.helicopter.price_per_day}$</span></p>
-                </div>
-                
-            </div>
-            
+        </CardActionArea> 
+        {location.pathname == '/remove-helicopter' ? <LowerCardDelete helicopter={props.helicopter} /> : <LowerCardReserve helicopter={props.helicopter} />} 
     </div>
-);
+);}
 
 export default HeliCard;
