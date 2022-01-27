@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage renders correctly 1`] = `
+<div
+  className=" overflow-hidden flex justify-center flex-col w-full md:w-3/4 lg:w-5/6 h-screen transition-all opacity-0 -translate-y-full origin-top ease-out duration-500"
+  id="main"
+>
+  <video
+    autoPlay={true}
+    className="video opacity-20 hidden md:block"
+    id="helis"
+    loop={true}
+    muted={true}
+  >
+    <source
+      src="https://i.imgur.com/5JiqJ1Q.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <h1
+    className="raleway cool-title transition-all duration-1000 !text-4xl md:!text-6xl ml-10 relative mt-40 bottom-48 translate-x-full translate-y"
+    id="title1"
+  >
+    Welcome,
+  </h1>
+  <h2
+    className="raleway cool-title transition-all duration-1000 durat !text-4xl md:!text-6xl ml-10 relative bottom-32 translate-x-full"
+    id="title2"
+  >
+    To the newest luxury experience
+  </h2>
+  <div
+    className="w-full flex justify-center mt-10"
+  >
+    <a
+      className=" transition-all duration-1000 w-2/6 h-auto leading-loose text-lg rounded-xl relative m-auto bottom-30 text-center font-bold opacity-0 invisible bg-yellow-600 animate-bounce mt-16"
+      href="/add-reservation"
+      id="title3"
+      onClick={[Function]}
+      type="button"
+    >
+      Begin your journey
+    </a>
+  </div>
+</div>
+`;
