@@ -9,7 +9,7 @@
 
 
 ## Live Demo
-Click [here](https://mystifying-raman-4e294e.netlify.app/) to view the project.
+### Click [here](https://rentcopter.netlify.app) to view the project.
 
 ## Built with
 - HTML
