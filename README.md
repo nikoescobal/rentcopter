@@ -20,6 +20,13 @@ Click [here](https://mystifying-raman-4e294e.netlify.app/) to view the project.
 - Redux
 - Lots of love :heart:
 
+## Kanban Board
+### Link to Kanban Board: Click [here](https://github.com/nikoescobal/rentcopter/projects/1)
+#### Number of team members: 4.
+#### Screenshot of initial state: 
+
+![68747470733a2f2f692e696d6775722e636f6d2f47616d707a32762e706e67](https://user-images.githubusercontent.com/85108160/151329166-53948508-18d3-4fd1-9b55-1d318fb59dfd.png)
+
 
 ## Getting Started
 
