@@ -1,14 +1,20 @@
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
+import { PostReservation } from '../redux/reducers/reservations';
 
 const HeliForm = (props) => {
-  const { price } = props;
+  const { helicopter } = props;
+  const { rental_cost: price } = helicopter;
 
   const initialForm = {
     'start-date': TODAY,
     'end-date': TODAY,
   };
+
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState(initialForm);
 
@@ -17,6 +23,12 @@ const HeliForm = (props) => {
       ...form,
       [e.target.name]: e.target.value,
     });
+  };
+  const navigate = useNavigate();
+  const handleReserve = (e) => {
+    e.preventDefault();
+    dispatch(PostReservation(form['start-date'], form['end-date'], helicopter));
+    navigate('../reservations', { replace: true });
   };
 
   const amount = dateDifference(form['start-date'], form['end-date'], price);
@@ -30,19 +42,19 @@ const HeliForm = (props) => {
 
   const classVerifier = (amount) => {
     if (amount > 0) {
-      return 'text-center text-green-400 mb-5';
+      return 'text-center text-green-400 mb-5 font-bold';
     }
-    return 'text-center text-red-400 mb-5';
+    return 'text-center text-red-400 mb-5 font-bold';
   };
 
   return (
-    <form className="flex flex-col">
-      <div className="flex space-evenly mb-10">
-        <label htmlFor="date-start" className="text-center">
-          <span>Reservation start-date:</span>
+    <form className="flex flex-col" id="reserve_form">
+      <div className="flex justify-evenly mb-10 w-full">
+        <label htmlFor="date-start" className="text-center flex flex-col">
+          <span className="mb-4">Reservation start-date:</span>
           <input
             type="date"
-            id="start-date"
+            id="start_date"
             name="start-date"
             min={TODAY}
             max={MONTHLATER}
@@ -52,11 +64,11 @@ const HeliForm = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="date-end" className="text-center">
-          <span>Reservation end-date:</span>
+        <label htmlFor="date-end" className="text-center flex flex-col">
+          <span className="mb-4">Reservation end-date:</span>
           <input
             type="date"
-            id="end-date"
+            id="end_date"
             name="end-date"
             min={TODAY}
             max={MONTHLATER}
@@ -70,13 +82,19 @@ const HeliForm = (props) => {
       <span className={classVerifier(amount)}>
         {messageVerifier(amount)}
       </span>
-      <button type="submit" className="heli-form-button">RESERVE</button>
+      <button
+        type="button"
+        className="heli-form-button rounded-full"
+        onClick={handleReserve}
+      >
+        RESERVE
+      </button>
     </form>
   );
 };
 
 HeliForm.propTypes = {
-  price: PropTypes.string.isRequired,
+  helicopter: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default HeliForm;

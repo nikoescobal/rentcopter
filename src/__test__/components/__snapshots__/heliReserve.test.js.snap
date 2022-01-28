@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Helicopter modal component renders correctly 1`] = `
+<div
+  className="h-full flex justify-center"
+>
+  <button
+    className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root 
+ !h-1/2
+ !sm:h-1/2 
+ !my-auto 
+ !mr-3
+ !rounded-full 
+ !text-sm
+ !bg-opacity-75
+ !w-24
+ !font-bold 
+ !bg-yellow-600
+ !hover:bg-indigo-700
+ !transition-all
+ !text-white css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    RESERVE
+  </button>
+</div>
+`;

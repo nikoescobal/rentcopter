@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Helicopter form component renders correctly 1`] = `
+<form
+  className="flex flex-col"
+  id="reserve_form"
+>
+  <div
+    className="flex space-evenly mb-10"
+  >
+    <label
+      className="text-center"
+      htmlFor="date-start"
+    >
+      <span>
+        Reservation start-date:
+      </span>
+      <input
+        className="bg-gray-600 rounded-full p-2"
+        id="start_date"
+        max="2022-02-25"
+        min="2022-01-25"
+        name="start-date"
+        onChange={[Function]}
+        placeholder="from"
+        type="date"
+        value="2022-01-25"
+      />
+    </label>
+    <label
+      className="text-center"
+      htmlFor="date-end"
+    >
+      <span>
+        Reservation end-date:
+      </span>
+      <input
+        className="bg-gray-600 rounded-full p-2"
+        id="end_date"
+        max="2022-02-25"
+        min="2022-01-25"
+        name="end-date"
+        onChange={[Function]}
+        placeholder="until"
+        type="date"
+        value="2022-01-25"
+      />
+    </label>
+  </div>
+  <span
+    className="text-center text-green-400 mb-5"
+  >
+    Reservation cost: 500 USD
+  </span>
+  <button
+    className="heli-form-button"
+    onClick={[Function]}
+    type="button"
+  >
+    RESERVE
+  </button>
+</form>
+`;

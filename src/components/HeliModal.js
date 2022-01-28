@@ -12,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import HeliCard from './HeliCard';
-import { useSelector } from 'react-redux';
 import HeliDetails from './HeliDetails';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -76,9 +75,9 @@ export default function CustomizedDialogs(props) {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <DialogContent dividers>
-            <div className=' h-36 w-full h-full !mx-auto md:h-60 rounded-2xl flex overflow-y-hidden' style={{
-              backgroundImage: `url(${helicopter.img})`, 
+        <DialogContent dividers >
+            <div className='w-full h-full !mx-auto md:h-60 rounded-2xl flex overflow-y-hidden' style={{
+              backgroundImage: `url(${helicopter.image})`, 
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               borderRadius: 10,
@@ -92,8 +91,8 @@ export default function CustomizedDialogs(props) {
         >
           {helicopter.name}
         </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
+        <DialogContent dividers >
+          <Typography gutterBottom className='text-center'>
             {helicopter.description}
           </Typography>
           <HeliDetails helicopter={helicopter} />

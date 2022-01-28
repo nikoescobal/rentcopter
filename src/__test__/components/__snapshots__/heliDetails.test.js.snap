@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Helicopter details component renders correctly 1`] = `
+<ul
+  className="heli-details-list"
+>
+  <li>
+    <span>
+      Speed:
+    </span>
+    <span>
+      260 KTS
+    </span>
+  </li>
+  <li>
+    <span>
+      Capacity:
+    </span>
+    <span>
+      6 People
+    </span>
+  </li>
+  <li>
+    <span>
+      Autonomy:
+    </span>
+    <span>
+      350 NM
+    </span>
+  </li>
+  <li>
+    <span>
+      Price:
+    </span>
+    <span>
+      500 USD
+    </span>
+  </li>
+</ul>
+`;
