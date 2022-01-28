@@ -9,7 +9,7 @@
 
 
 ## Live Demo
-Click [here](https://mystifying-raman-4e294e.netlify.app/) to view the project.
+### Click [here](https://rentcopter.netlify.app) to view the project.
 
 ## Built with
 - HTML
@@ -19,6 +19,12 @@ Click [here](https://mystifying-raman-4e294e.netlify.app/) to view the project.
 - React
 - Redux
 - Lots of love :heart:
+
+## ⚠️ Admin user 
+### When a user is registered, it will have only normal user priviledges. To obtain admin priviledges (Add/remove helicopters) please login with the following credentials: 
+>Email: admin@test.com
+>Password: 123456
+
 
 ## Kanban Board
 ### Link to Kanban Board: Click [here](https://github.com/nikoescobal/rentcopter/projects/1)
